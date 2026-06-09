@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es">
+  <meta charset="utf-8" />
+  <title>Trabajo en grupo TG2</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Desarrollo con Tecnologías Emergentes. Curso 2025-26<br /> Trabajo TG2 del laboratorio A3, grupo 02<br />
+      Titulo: TG2. Evaluar y comparar dos tecnologías emergentes</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="https://uah.blackboard.com#1">1. Información general</a></li>
+      <li><a href="https://uah.blackboard.com#2">2. Descripción de las tecnologías</a></li>
+      <li><a href="https://uah.blackboard.com#3">3. Criterios de comparación</a></li>
+      <li><a href="https://uah.blackboard.com#4">4. Evaluación de los criterios por categoría</a></li>
+      <li><a href="https://uah.blackboard.com#5">5. Comparación de las tecnologías</a></li>
+      <li><a href="https://uah.blackboard.com#6">6. Recomendaciones</a></li>
+      <li><a href="https://uah.blackboard.com#7">7. Apéndices y anexos</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="1&quot;">
+      <h2>1. Información general</h2>
+      <h3>1.1 Autores</h3>
+      <p>dte2026a3g02. Gonzalo López Menor, Marcos Corrochano Arroyo, Alberto García Olmedilla, Raúl Rodríguez Santos,
+        Diego López Nogales</p>
+      <h3>1.2 Proyecto Scrum y repositorio en GitLab</h3>
+      <p><a href="https://gitlab.com/dte2026a3g02/TG2">https://gitlab.com/dte2026a3g02/TG2</a>". </p>
+      <h3>1.3 Burndown chart</h3>
+      <p>En este apartado se debe incrustar la imagen del diagrama Burndown final del Sprint TG2.</p>
+      <img src="burndown-chart-TG2-02.jpg" alt="Burndown Chart TG2" width="1000">
+      <h3>1.4 Presentacion del trabajo</h3>
+      <a
+        href="https://universidaddealcala-my.sharepoint.com/:p:/g/personal/gonzalo_lopezmenor_edu_uah_es/IQDedVZzij9eSoE4xiMiZz0UAdhUu_5dy2a_Y7HEhXqgTTQ?e=3udbhX">Presentación
+        con diapositivas del trabajo TG2</a>
+
+    </section>
+    <section id="2">
+      <h2>2. Descripción de las tecnologías</h2>
+
+      <h3>2.1 Descripción de la tecnología Scikit-learn</h3>
+
+      <p>Scikit-learn (también conocido como sklearn) es una biblioteca de aprendizaje automático de código abierto para
+        el lenguaje de programación Python. Fue desarrollada inicialmente por David Cournapeau como un proyecto de
+        Google Summer of Code en 2007, y publicada en su primera versión estable en 2010. Actualmente es mantenida por
+        una comunidad activa de contribuidores y patrocinada por empresas como Inria, Microsoft y otras organizaciones.
+        Su nombre proviene de "Scientific Kit for Python", y se integra de forma nativa con otras bibliotecas
+        científicas del ecosistema Python como NumPy, SciPy, Matplotlib y Pandas.</p>
+
+      <p>La biblioteca ofrece una amplia variedad de algoritmos de aprendizaje supervisado y no supervisado, incluyendo
+        clasificación, regresión, clustering, reducción de dimensionalidad, selección de modelos y preprocesamiento de
+        datos. Entre sus algoritmos más populares se encuentran las máquinas de vectores de soporte (SVM), los bosques
+        aleatorios (Random Forest), la regresión logística, los k-vecinos más cercanos (KNN) y los árboles de decisión.
+        Su API está diseñada con un enfoque en la coherencia y simplicidad: todos los estimadores siguen una interfaz
+        común con métodos <code>fit()</code>, <code>predict()</code> y <code>transform()</code>, lo que facilita
+        enormemente el aprendizaje y la reutilización del código.</p>
+
+      <p>Scikit-learn se distingue por su excelente documentación, que incluye guías de usuario, tutoriales, ejemplos y
+        una referencia API exhaustiva. Es una de las bibliotecas más utilizadas en el ámbito académico y empresarial
+        para la construcción de prototipos y soluciones de machine learning. Sin embargo, su enfoque está orientado
+        principalmente al aprendizaje automático clásico (no incluye deep learning de forma nativa), y requiere que el
+        usuario tenga conocimientos sólidos de Python y ciencia de datos para aprovechar todo su potencial.</p>
+
+      <p><strong>Fuente:</strong> <a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a><br />
+        <strong>Fuente:</strong> <a
+          href="https://en.wikipedia.org/wiki/Scikit-learn">https://en.wikipedia.org/wiki/Scikit-learn</a>
+      </p>
+
+      <h3>2.2 Descripción de la tecnología PyCaret</h3>
+
+      <p>PyCaret es una biblioteca de aprendizaje automático de bajo código (low-code) de código abierto para Python,
+        diseñada para automatizar y simplificar los flujos de trabajo de machine learning. Fue creada por Moez Ali y
+        lanzada en su primera versión en abril de 2020. Su principal propósito es democratizar el acceso al machine
+        learning, permitiendo que tanto expertos como principiantes puedan entrenar, comparar y desplegar modelos con un
+        número muy reducido de líneas de código. PyCaret actúa como un wrapper sobre diversas bibliotecas populares del
+        ecosistema Python, como Scikit-learn, XGBoost, LightGBM, CatBoost, Optuna, entre otras.</p>
+
+      <p>Una de las características más destacadas de PyCaret es su función <code>compare_models()</code>, que permite
+        entrenar y evaluar automáticamente múltiples algoritmos de machine learning sobre el mismo conjunto de datos y
+        devuelve los resultados ordenados por la métrica de evaluación elegida. Además, incluye funcionalidades
+        integradas para preprocesamiento automático (normalización, codificación de variables categóricas, imputación de
+        valores faltantes), ajuste de hiperparámetros, análisis de importancia de características, detección de
+        anomalías, clustering, pronóstico de series temporales y clasificación de texto e imágenes en módulos
+        especializados. Todo ello con una sintaxis muy concisa y accesible.</p>
+
+      <p>PyCaret está especialmente orientado a contextos donde se busca velocidad de experimentación y comparación
+        rápida de modelos, siendo muy útil en entornos de análisis exploratorio, competiciones de ciencia de datos y
+        proyectos con plazos ajustados. Integra además capacidades de MLOps, como el registro y seguimiento de
+        experimentos mediante MLflow, y el despliegue de modelos en plataformas cloud. Su principal limitación es que,
+        al abstraer tanto el proceso, puede resultar menos flexible para casos de uso muy específicos o cuando se
+        requiere un control granular sobre el pipeline de machine learning.</p>
+
+      <p><strong>Fuente:</strong> <a href="https://pycaret.org/">https://pycaret.org/</a><br />
+        <strong>Fuente:</strong> <a href="https://pycaret.gitbook.io/docs/">https://pycaret.gitbook.io/docs/</a>
+      </p>
+
+    </section>
+
+    <section id="3">
+      <h2>3. Criterios de comparación</h2>
+      <p>En los sub-apartados de este apartado se deben indicar cada uno de los criterios (también llamados factores,
+        propiedades, características, indicadores, etc.), que se usarán en la comparación.</p>
+      <p>Los criterios deben organizarse en categorías (al menos 3 categorías). El numero de criterios totales no puede
+        ser inferior a 20.</p>
+      <p>Las categorías dependerán del tipo de tecnología, pueden ser categorías como "General", "Utilidades",
+        "Rendimiento", etc.</p>
+      <p>Por cada criterio hay que indicar el nombre, una breve descripción, y el tipo de valor a asignar al criterio.
+      </p>
+
+      <h3>3.1 Categoría A: General</h3>
+
+      <h4>3.1.1 Criterio A.1: Autor / Creador</h4>
+      <ul>
+        <li>Nombre del criterio: Autor.</li>
+        <li>Descripción: Nombre de la persona, institución o empresa que ha creado y mantiene actualmente la biblioteca.
+        </li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.1.2 Criterio A.2: Año de lanzamiento</h4>
+      <ul>
+        <li>Nombre del criterio: Año de lanzamiento.</li>
+        <li>Descripción: Año en que se publicó la primera versión estable de la biblioteca.</li>
+        <li>Tipo de valor: Numérico (año).</li>
+      </ul>
+
+      <h4>3.1.3 Criterio A.3: Licencia</h4>
+      <ul>
+        <li>Nombre del criterio: Licencia.</li>
+        <li>Descripción: Tipo de licencia de software bajo la que se distribuye la biblioteca.</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.1.4 Criterio A.4: Lenguaje de programación requerido</h4>
+      <ul>
+        <li>Nombre del criterio: Lenguaje.</li>
+        <li>Descripción: Lenguaje de programación necesario para utilizar la biblioteca.</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.1.5 Criterio A.5: Versión actual</h4>
+      <ul>
+        <li>Nombre del criterio: Versión actual.</li>
+        <li>Descripción: Número de la versión estable más reciente disponible de la biblioteca en el momento de la
+          comparación.</li>
+        <li>Tipo de valor: Texto libre (número de versión).</li>
+      </ul>
+
+      <h4>3.1.6 Criterio A.6: Popularidad (estrellas en GitHub)</h4>
+      <ul>
+        <li>Nombre del criterio: Popularidad.</li>
+        <li>Descripción: Número de estrellas en GitHub como indicador del uso y reconocimiento de la comunidad.</li>
+        <li>Tipo de valor: Numérico.</li>
+      </ul>
+
+      <h4>3.1.7 Criterio A.7: Comunidad y soporte</h4>
+      <ul>
+        <li>Nombre del criterio: Comunidad.</li>
+        <li>Descripción: Calidad y tamaño de la comunidad de usuarios y desarrolladores, incluyendo foros, Stack
+          Overflow, GitHub Discussions, etc.</li>
+        <li>Tipo de valor: Texto libre (valoración cualitativa: Alta / Media / Baja).</li>
+      </ul>
+
+      <h4>3.1.8 Criterio A.8: Documentación oficial</h4>
+      <ul>
+        <li>Nombre del criterio: Documentación.</li>
+        <li>Descripción: Calidad, extensión y accesibilidad de la documentación oficial (tutoriales, API reference,
+          guías de usuario, ejemplos).</li>
+        <li>Tipo de valor: Texto libre (valoración cualitativa: Alta / Media / Baja).</li>
+      </ul>
+
+      <h3>3.2 Categoría B: Funcionalidades</h3>
+
+      <h4>3.2.1 Criterio B.1: Algoritmos soportados</h4>
+      <ul>
+        <li>Nombre del criterio: Algoritmos soportados.</li>
+        <li>Descripción: Variedad y cantidad de algoritmos de machine learning disponibles de forma nativa en la
+          biblioteca.</li>
+        <li>Tipo de valor: Numérico / Texto libre.</li>
+      </ul>
+
+      <h4>3.2.2 Criterio B.2: Preprocesamiento automático de datos</h4>
+      <ul>
+        <li>Nombre del criterio: Preprocesamiento automático.</li>
+        <li>Descripción: Capacidad de la biblioteca para realizar automáticamente tareas de limpieza y transformación de
+          datos (normalización, imputación, codificación).</li>
+        <li>Tipo de valor: Booleano (Sí/No) / Texto libre.</li>
+      </ul>
+
+      <h4>3.2.3 Criterio B.3: Comparación automática de modelos</h4>
+      <ul>
+        <li>Nombre del criterio: Comparación automática.</li>
+        <li>Descripción: Capacidad de entrenar y comparar múltiples algoritmos de forma automática con una sola llamada
+          a función.</li>
+        <li>Tipo de valor: Booleano (Sí/No).</li>
+      </ul>
+
+      <h4>3.2.4 Criterio B.4: Ajuste de hiperparámetros</h4>
+      <ul>
+        <li>Nombre del criterio: Ajuste de hiperparámetros.</li>
+        <li>Descripción: Funcionalidades disponibles para la optimización automática de hiperparámetros (grid search,
+          random search, optimización bayesiana, etc.).</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.2.5 Criterio B.5: Pipelines y flujos de trabajo</h4>
+      <ul>
+        <li>Nombre del criterio: Pipelines.</li>
+        <li>Descripción: Soporte para construir y gestionar flujos de trabajo encadenados de preprocesamiento y
+          modelado.</li>
+        <li>Tipo de valor: Booleano (Sí/No) / Texto libre.</li>
+      </ul>
+
+      <h4>3.2.6 Criterio B.6: Interpretabilidad de modelos (Explainability)</h4>
+      <ul>
+        <li>Nombre del criterio: Interpretabilidad.</li>
+        <li>Descripción: Herramientas disponibles para analizar e interpretar el comportamiento de los modelos
+          (importancia de variables, SHAP, gráficos explicativos).</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.2.7 Criterio B.7: Soporte para tareas especializadas</h4>
+      <ul>
+        <li>Nombre del criterio: Tareas especializadas.</li>
+        <li>Descripción: Disponibilidad de módulos para tareas avanzadas como series temporales, detección de anomalías,
+          clustering, NLP o clasificación de imágenes.</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.2.8 Criterio B.8: Integración con MLOps / despliegue</h4>
+      <ul>
+        <li>Nombre del criterio: MLOps y despliegue.</li>
+        <li>Descripción: Soporte nativo o integración con herramientas para el seguimiento de experimentos, versionado
+          de modelos y despliegue en producción (MLflow, BentoML, cloud providers, etc.).</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h3>3.3 Categoría C: Usabilidad y Curva de Aprendizaje</h3>
+
+      <h4>3.3.1 Criterio C.1: Facilidad de uso (nivel de abstracción)</h4>
+      <ul>
+        <li>Nombre del criterio: Facilidad de uso.</li>
+        <li>Descripción: Nivel de abstracción ofrecido por la biblioteca; cuánto código es necesario escribir para
+          realizar tareas comunes de machine learning.</li>
+        <li>Tipo de valor: Texto libre (valoración cualitativa: Alta / Media / Baja).</li>
+      </ul>
+
+      <h4>3.3.2 Criterio C.2: Curva de aprendizaje</h4>
+      <ul>
+        <li>Nombre del criterio: Curva de aprendizaje.</li>
+        <li>Descripción: Tiempo y esfuerzo necesarios para que un desarrollador con conocimientos básicos de Python
+          pueda ser productivo con la biblioteca.</li>
+        <li>Tipo de valor: Texto libre (valoración cualitativa: Suave / Moderada / Pronunciada).</li>
+      </ul>
+
+      <h4>3.3.3 Criterio C.3: Flexibilidad y personalización</h4>
+      <ul>
+        <li>Nombre del criterio: Flexibilidad.</li>
+        <li>Descripción: Capacidad para personalizar y extender los componentes de la biblioteca con código propio,
+          implementar estimadores personalizados o modificar pipelines a bajo nivel.</li>
+        <li>Tipo de valor: Texto libre (valoración cualitativa: Alta / Media / Baja).</li>
+      </ul>
+
+      <h3>3.4 Categoría D: Rendimiento y Compatibilidad</h3>
+
+      <h4>3.4.1 Criterio D.1: Rendimiento computacional</h4>
+      <ul>
+        <li>Nombre del criterio: Rendimiento.</li>
+        <li>Descripción: Eficiencia en tiempo de entrenamiento e inferencia para conjuntos de datos de tamaño mediano y
+          grande.</li>
+        <li>Tipo de valor: Texto libre (valoración cualitativa).</li>
+      </ul>
+
+      <h4>3.4.2 Criterio D.2: Compatibilidad con entornos de desarrollo</h4>
+      <ul>
+        <li>Nombre del criterio: Compatibilidad de entornos.</li>
+        <li>Descripción: Compatibilidad con los principales entornos de desarrollo y ejecución: Jupyter Notebooks,
+          scripts Python, Google Colab, IDEs como VS Code o PyCharm.</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.4.3 Criterio D.3: Integración con otras bibliotecas del ecosistema Python</h4>
+      <ul>
+        <li>Nombre del criterio: Integración con el ecosistema.</li>
+        <li>Descripción: Facilidad de integración con otras bibliotecas populares de ciencia de datos como Pandas,
+          NumPy, Matplotlib, Seaborn, XGBoost, etc.</li>
+        <li>Tipo de valor: Texto libre.</li>
+      </ul>
+
+      <h4>3.4.4 Criterio D.4: Soporte para GPU</h4>
+      <ul>
+        <li>Nombre del criterio: Soporte GPU.</li>
+        <li>Descripción: Capacidad de aprovechar unidades de procesamiento gráfico (GPU) para acelerar el entrenamiento
+          de modelos.</li>
+        <li>Tipo de valor: Booleano (Sí/No) / Texto libre.</li>
+      </ul>
+
+    </section>
+    <section id="4">
+      <h2>4. Evaluación de los criterios por categoría</h2>
+      <h3>4.1 Evaluación de los criterios para Scikit-learn</h3>
+      <p>Debe incluir al menos una tabla con la siguiente estructura.</p>
+      <table>
+        <tbody>
+          <tr>
+            <th>Criterio</th>
+            <th>Evaluación</th>
+            <th>Fuente</th>
+          </tr>
+          <tr>
+            <td>Criterio A.1: Autor</td>
+            <td>David Cournapeau / comunidad open source</td>
+            <td><a href="https://scikit-learn.org/stable/about.html">
+                https://scikit-learn.org/stable/about.html
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio A.2: Año de lanzamiento</td>
+            <td>2010</td>
+            <td><a href="https://en.wikipedia.org/wiki/Scikit-learn">
+                https://en.wikipedia.org/wiki/Scikit-learn
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio A.3: Licencia</td>
+            <td>BSD-3-Clause</td>
+            <td><a href="https://scikit-learn.org/stable/about.html">
+                https://scikit-learn.org/stable/about.html
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio A.4: Lenguaje</td>
+            <td>Python</td>
+            <td><a href="https://scikit-learn.org">
+                https://scikit-learn.org
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio A.5: Versión actual</td>
+            <td>1.8</td>
+            <td><a href="https://scikit-learn.org/stable/whats_new.html">
+                https://scikit-learn.org/stable/whats_new.html
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio A.6: Popularidad</td>
+            <td>~65.9k estrellas</td>
+            <td><a href="https://github.com/scikit-learn/scikit-learn">
+                https://github.com/scikit-learn/scikit-learn
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio A.7: Comunidad</td>
+            <td>Alta</td>
+            <td><a href="https://scikit-learn.org/stable/support.html">
+                https://scikit-learn.org/stable/support.html
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio A.8: Documentación</td>
+            <td>Muy alta</td>
+            <td><a href="https://scikit-learn.org/stable/user_guide.html">
+                https://scikit-learn.org/stable/user_guide.html
+              </a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>En el criterio A.1 (Autor), se observa que Scikit-learn tiene un origen más antiguo y consolidado, desarrollado
+        inicialmente por David Cournapeau y mantenido actualmente por una comunidad amplia respaldada por instituciones
+        como Inria. Por otro lado, PyCaret es una herramienta más reciente creada por Moez Ali, con una comunidad en
+        crecimiento pero menos consolidada.</p>
+      <p>Respecto al criterio A.2 (Año de lanzamiento), la diferencia temporal es significativa: Scikit-learn (2010) ha
+        tenido más tiempo para madurar, estabilizarse y convertirse en un estándar en machine learning, mientras que
+        PyCaret (2020) es una tecnología más reciente orientada a nuevas tendencias como el AutoML.</p>
+      <p>En el criterio A.6 (Popularidad), Scikit-learn presenta una ventaja clara debido a su larga trayectoria y uso
+        extendido tanto en el ámbito académico como profesional. PyCaret, aunque popular, tiene una comunidad más
+        reducida al ser una herramienta más reciente.</p>
+      <p>En cuanto al criterio A.7 (Comunidad y soporte), Scikit-learn cuenta con una comunidad muy amplia, abundante
+        documentación externa y gran presencia en foros técnicos. PyCaret dispone de una comunidad activa, pero de menor
+        tamaño, lo que puede influir en la disponibilidad de recursos y resolución de problemas.</p>
+      <p>Finalmente, en el criterio A.8 (Documentación), ambas tecnologías presentan documentación de calidad, aunque
+        Scikit-learn destaca por su exhaustividad, ejemplos detallados y madurez, mientras que PyCaret ofrece una
+        documentación clara y orientada a la facilidad de uso, especialmente para usuarios principiantes.</p>
+      <h3>4.2 Evaluación de los criterios para Pycaret</h3>
+      <table>
+        <tbody>
+          <tr>
+            <th>Criterio</th>
+            <th>Evaluación</th>
+            <th>Fuente</th>
+          </tr>
+          <tr>
+            <td>Criterio B.1: Algoritmos soportados</td>
+            <td>Amplia (basada en sklearn, XGBoost…)</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio B.2: Preprocesamiento automático</td>
+            <td>Sí</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio B.3: Comparación automática</td>
+            <td>Sí</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio B.4: Ajuste de hiperparámetros</td>
+            <td>Automático</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio B.5: Pipelines</td>
+            <td>Sí</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio B.6: Interpretabilidad</td>
+            <td>Alta</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio B.7: Tareas especializadas</td>
+            <td>Time series, NLP, clustering</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+          <tr>
+            <td>Criterio B.8: MLOps y despliegue</td>
+            <td>Sí (MLflow)</td>
+            <td><a href="https://pycaret.gitbook.io/docs/">
+                https://pycaret.gitbook.io/docs/
+              </a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>En el criterio B.2 (Preprocesamiento automático), se indica que Scikit-learn ofrece soporte parcial, ya que
+        dispone de herramientas para el preprocesamiento de datos (como escalado, normalización o codificación), pero
+        requiere que el usuario configure manualmente cada paso. En cambio, PyCaret automatiza gran parte de este
+        proceso de forma interna.</p>
+      <p>Respecto al criterio B.3 (Comparación automática de modelos), Scikit-learn no dispone de una función nativa que
+        permita comparar múltiples modelos de forma automática, siendo necesario implementar manualmente este proceso.
+        PyCaret, por el contrario, incluye la función <em>compare_models()</em>, que automatiza esta tarea </p>
+      <p>En el criterio B.6 (Interpretabilidad), Scikit-learn ofrece capacidades básicas, pero depende de librerías
+        externas como SHAP o LIME para un análisis más avanzado. PyCaret integra directamente herramientas de
+        interpretabilidad, facilitando su uso.</p>
+      <p>En cuanto al criterio B.8 (MLOps y despliegue), Scikit-learn no incorpora funcionalidades específicas para el
+        ciclo de vida completo del modelo, mientras que PyCaret sí incluye integración con herramientas como MLflow, lo
+        que simplifica el seguimiento y despliegue de modelos.</p>
+    </section>
+    <section id="5">
+      <h2>5. Comparación de las tecnologías</h2>
+
+      <p>
+        A partir de los criterios definidos en el apartado 3 y de la evaluación realizada en el apartado 4,
+        se presenta a continuación una comparación cruzada entre <strong>Scikit-learn</strong> y
+        <strong>PyCaret</strong>. La comparación permite observar que ambas tecnologías son válidas para la
+        línea de investigación “inteligencia artificial para analítica predictiva de datos en el dominio de la
+        educación”, aunque responden a enfoques diferentes: Scikit-learn prioriza el control, la flexibilidad
+        y la madurez del ecosistema, mientras que PyCaret destaca por la automatización, la rapidez de
+        experimentación y la facilidad de uso.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Criterio</th>
+            <th>Scikit-learn</th>
+            <th>PyCaret</th>
+            <th>Comentarios</th>
+          </tr>
+
+          <tr>
+            <td>A.1 Autor / creador</td>
+            <td>David Cournapeau + comunidad open source</td>
+            <td>Moez Ali + comunidad open source</td>
+            <td>Scikit-learn tiene un origen más antiguo y una gobernanza más consolidada; PyCaret nace después con un
+              enfoque más orientado al low-code.</td>
+          </tr>
+          <tr>
+            <td>A.2 Año de lanzamiento</td>
+            <td>2010</td>
+            <td>2020</td>
+            <td>Scikit-learn cuenta con una trayectoria mucho más larga, lo que se traduce en mayor madurez y
+              estabilidad.</td>
+          </tr>
+          <tr>
+            <td>A.3 Licencia</td>
+            <td>BSD</td>
+            <td>MIT</td>
+            <td>Ambas usan licencias permisivas y adecuadas para uso académico y profesional.</td>
+          </tr>
+          <tr>
+            <td>A.4 Lenguaje requerido</td>
+            <td>Python</td>
+            <td>Python</td>
+            <td>No hay diferencias relevantes en este criterio, ya que ambas se integran en el ecosistema Python.</td>
+          </tr>
+          <tr>
+            <td>A.5 Versión actual</td>
+            <td>1.8.0</td>
+            <td>3.3.2</td>
+            <td>Las dos siguen activas, aunque Scikit-learn muestra una evolución más continua y una documentación de
+              versión más homogénea.</td>
+          </tr>
+          <tr>
+            <td>A.6 Popularidad</td>
+            <td>~65.9k estrellas</td>
+            <td>~9.7k estrellas</td>
+            <td>Scikit-learn presenta una ventaja muy clara en adopción, visibilidad y reconocimiento dentro de la
+              comunidad.</td>
+          </tr>
+          <tr>
+            <td>A.7 Comunidad y soporte</td>
+            <td>Muy alta</td>
+            <td>Media-Alta</td>
+            <td>Scikit-learn dispone de una comunidad más amplia, más recursos externos y mayor presencia en entornos
+              académicos y profesionales.</td>
+          </tr>
+          <tr>
+            <td>A.8 Documentación oficial</td>
+            <td>Muy alta</td>
+            <td>Alta</td>
+            <td>La documentación de Scikit-learn es más extensa y profunda; la de PyCaret es clara y práctica, pero
+              menos exhaustiva.</td>
+          </tr>
+
+          <tr>
+            <td>B.1 Algoritmos soportados</td>
+            <td>Muy amplia en ML clásico supervisado y no supervisado</td>
+            <td>Amplia, apoyada en Scikit-learn y otras librerías como XGBoost o LightGBM</td>
+            <td>Scikit-learn ofrece una base algorítmica muy sólida; PyCaret amplía posibilidades reutilizando varias
+              bibliotecas subyacentes.</td>
+          </tr>
+          <tr>
+            <td>B.2 Preprocesamiento automático</td>
+            <td>Parcial / manual</td>
+            <td>Sí</td>
+            <td>Scikit-learn permite hacerlo muy bien, pero configurando cada paso; PyCaret automatiza gran parte del
+              flujo.</td>
+          </tr>
+          <tr>
+            <td>B.3 Comparación automática de modelos</td>
+            <td>No nativa</td>
+            <td>Sí, con <code>compare_models()</code></td>
+            <td>Es una de las diferencias más claras: PyCaret acelera mucho la experimentación inicial.</td>
+          </tr>
+          <tr>
+            <td>B.4 Ajuste de hiperparámetros</td>
+            <td>Muy flexible: grid search, random search y configuración manual</td>
+            <td>Automático y simplificado</td>
+            <td>Scikit-learn da más control fino; PyCaret reduce esfuerzo y tiempo de configuración.</td>
+          </tr>
+          <tr>
+            <td>B.5 Pipelines y flujos de trabajo</td>
+            <td>Sí, con <code>Pipeline</code> y composición explícita</td>
+            <td>Sí, mediante <code>setup()</code> y pipeline interno reproducible</td>
+            <td>Ambas tecnologías soportan pipelines, aunque Scikit-learn los expone de forma más transparente y PyCaret
+              los abstrae.</td>
+          </tr>
+          <tr>
+            <td>B.6 Interpretabilidad</td>
+            <td>Media</td>
+            <td>Alta</td>
+            <td>PyCaret facilita más el análisis rápido del modelo; en Scikit-learn suele requerirse más trabajo
+              adicional o apoyo externo.</td>
+          </tr>
+          <tr>
+            <td>B.7 Tareas especializadas</td>
+            <td>Amplio soporte general, pero menos orientado a módulos end-to-end</td>
+            <td>Clasificación, regresión, clustering, anomalías y series temporales</td>
+            <td>PyCaret destaca por ofrecer módulos especializados ya estructurados para varios casos de uso.</td>
+          </tr>
+          <tr>
+            <td>B.8 MLOps y despliegue</td>
+            <td>Integración externa, no nativa</td>
+            <td>Sí, con soporte de tracking e integración con MLflow</td>
+            <td>PyCaret ofrece un enfoque más preparado para ciclo de experimento y despliegue rápido.</td>
+          </tr>
+
+          <tr>
+            <td>C.1 Facilidad de uso</td>
+            <td>Media</td>
+            <td>Alta</td>
+            <td>PyCaret reduce mucho el código necesario; Scikit-learn exige más conocimiento técnico, pero ofrece más
+              control.</td>
+          </tr>
+          <tr>
+            <td>C.2 Curva de aprendizaje</td>
+            <td>Moderada</td>
+            <td>Suave</td>
+            <td>PyCaret resulta más accesible para empezar; Scikit-learn requiere más base para dominar bien sus
+              componentes.</td>
+          </tr>
+          <tr>
+            <td>C.3 Flexibilidad y personalización</td>
+            <td>Muy alta</td>
+            <td>Media</td>
+            <td>Scikit-learn es superior cuando se necesita modificar o diseñar pipelines y experimentos a bajo nivel.
+            </td>
+          </tr>
+
+          <tr>
+            <td>D.1 Rendimiento computacional</td>
+            <td>Alto</td>
+            <td>Medio-Alto</td>
+            <td>Scikit-learn suele resultar más eficiente cuando se trabaja de forma directa; PyCaret añade cierta
+              sobrecarga por su capa de abstracción.</td>
+          </tr>
+          <tr>
+            <td>D.2 Compatibilidad con entornos</td>
+            <td>Muy alta</td>
+            <td>Alta</td>
+            <td>Ambas funcionan bien en notebooks, scripts e IDEs, aunque Scikit-learn es el estándar más universal.
+            </td>
+          </tr>
+          <tr>
+            <td>D.3 Integración con otras bibliotecas</td>
+            <td>Excelente</td>
+            <td>Muy alta</td>
+            <td>Scikit-learn se integra de forma natural con todo el ecosistema científico Python; PyCaret también, pero
+              como capa superior.</td>
+          </tr>
+          <tr>
+            <td>D.4 Soporte para GPU</td>
+            <td>Parcial / experimental</td>
+            <td>Sí, para determinados casos y configuraciones</td>
+            <td>PyCaret ofrece una solución más directa para activar GPU; en Scikit-learn el soporte es más reciente,
+              limitado y experimental.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        La comparación muestra que <strong>Scikit-learn</strong> es la opción más adecuada cuando se busca
+        una biblioteca madura, ampliamente adoptada y con gran flexibilidad para diseñar soluciones
+        personalizadas. En el contexto de la analítica predictiva en educación, esto resulta especialmente
+        útil cuando se quiere construir un pipeline riguroso, justificar técnicamente cada etapa del proceso
+        y mantener control total sobre el preprocesamiento, la selección de variables, la validación y la
+        evaluación de modelos.
+      </p>
+
+      <p>
+        Por su parte, <strong>PyCaret</strong> destaca cuando el objetivo principal es acelerar la experimentación
+        y reducir la complejidad técnica. Para escenarios en los que se necesite comparar rápidamente varios
+        modelos predictivos sobre datos educativos, obtener una primera línea base o facilitar el trabajo de
+        usuarios menos expertos, PyCaret ofrece una ventaja clara gracias a su enfoque low-code, su
+        automatización del preprocesamiento y su capacidad para centralizar gran parte del flujo de trabajo
+        con pocas líneas de código.
+      </p>
+
+      <p>
+        En consecuencia, no puede afirmarse que una tecnología sea absolutamente mejor que la otra en todos
+        los casos. Más bien, ambas pueden entenderse como herramientas complementarias. Scikit-learn aporta
+        profundidad, control y robustez metodológica, mientras que PyCaret aporta productividad, rapidez y
+        accesibilidad. Para la línea de investigación del grupo, esto significa que Scikit-learn sería más
+        apropiada para desarrollos finales y análisis más detallados, mientras que PyCaret sería especialmente
+        útil en fases iniciales de exploración, prototipado y comparación rápida de alternativas.
+      </p>
+
+      <p>
+        <strong>Fuentes principales de la comparación:</strong><br>
+        <a href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a><br>
+        <a
+          href="https://scikit-learn.org/stable/user_guide.html">https://scikit-learn.org/stable/user_guide.html</a><br>
+        <a href="https://scikit-learn.org/stable/whats_new.html">https://scikit-learn.org/stable/whats_new.html</a><br>
+        <a href="https://scikit-learn.org/stable/support.html">https://scikit-learn.org/stable/support.html</a><br>
+        <a href="https://github.com/scikit-learn/scikit-learn">https://github.com/scikit-learn/scikit-learn</a><br>
+        <a href="https://pycaret.org/">https://pycaret.org/</a><br>
+        <a href="https://pycaret.gitbook.io/docs/">https://pycaret.gitbook.io/docs/</a><br>
+        <a href="https://pypi.org/project/pycaret/">https://pypi.org/project/pycaret/</a><br>
+        <a href="https://github.com/pycaret/pycaret">https://github.com/pycaret/pycaret</a>
+      </p>
+    </section>
+    <section id="6">
+      <h2>6. Recomendaciones</h2>
+      <p>
+        Después de comparar Scikit-learn y PyCaret, se puede ver que las dos tecnologías
+        son útiles para la línea de investigación del grupo, centrada en inteligencia artificial
+        para analítica predictiva de datos en educación. Aun así, no sirven exactamente
+        para lo mismo ni destacan en las mismas situaciones. Por eso, en este apartado
+        se proponen dos casos de uso concretos y se recomienda cuál de las dos tecnologías
+        encaja mejor en cada uno.
+      </p>
+
+      <h3>6.1 Situación A</h3>
+      <h4>6.1.1 Descripción de la situación</h4>
+      <p>
+        Imaginemos un equipo de investigación de una universidad que quiere desarrollar
+        una solución de analítica predictiva educativa de forma seria y bastante detallada.
+        No buscan solo sacar un modelo rápido, sino poder controlar bien todo el proceso:
+        preparar los datos, elegir variables, entrenar, validar, ajustar parámetros
+        y analizar los resultados con más profundidad. Además, es un equipo que ya tiene
+        conocimientos de Python y de machine learning, y que valora mucho trabajar con
+        una herramienta estable, muy conocida y bien documentada.
+      </p>
+
+      <h4>6.1.2 Recomendación de la tecnología a utilizar</h4>
+      <p>
+        En este caso, la tecnología más recomendable sería <strong>Scikit-learn</strong>.
+      </p>
+      <p>
+        La razón principal es que Scikit-learn permite trabajar con mucho más control sobre
+        el modelo y sobre cada paso del proceso. Es una biblioteca más madura, con más años
+        de recorrido, una comunidad enorme y una documentación muy completa. Todo eso da
+        bastante confianza cuando se quiere hacer un trabajo más sólido y más técnico.
+      </p>
+      <p>
+        En una situación como esta, lo más importante no es automatizar al máximo, sino poder
+        decidir bien cómo se hace cada parte del pipeline. Por eso, aunque PyCaret puede ahorrar
+        tiempo, Scikit-learn encaja mejor cuando se quiere una solución más flexible,
+        más personalizable y más rigurosa.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Criterios relevantes para la decisión</th>
+            <th>Ventajas Scikit-learn</th>
+            <th>Ventajas PyCaret</th>
+          </tr>
+          <tr>
+            <td>Madurez y estabilidad</td>
+            <td>Tiene más trayectoria y un ecosistema más consolidado</td>
+            <td>Es una herramienta más reciente</td>
+          </tr>
+          <tr>
+            <td>Comunidad y soporte</td>
+            <td>Tiene una comunidad más amplia y más recursos de ayuda</td>
+            <td>Comunidad activa, pero más pequeña</td>
+          </tr>
+          <tr>
+            <td>Documentación</td>
+            <td>Muy completa y útil para profundizar</td>
+            <td>Más simple y orientada a rapidez de uso</td>
+          </tr>
+          <tr>
+            <td>Control del flujo de trabajo</td>
+            <td>Permite más flexibilidad y más control detallado</td>
+            <td>Automatiza más, pero deja menos margen de control</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>6.2 Situación B</h3>
+      <h4>6.2.1 Descripción de la situación</h4>
+      <p>
+        Ahora pensemos en un equipo pequeño de una institución educativa que quiere montar
+        un prototipo de analítica predictiva en poco tiempo. Por ejemplo, una primera versión
+        de un sistema para predecir riesgo de abandono, rendimiento académico o necesidad
+        de apoyo a partir de datos del alumnado. En este caso, el equipo tiene menos tiempo,
+        necesita avanzar rápido y le interesa comparar varios modelos sin tener que programar
+        manualmente cada paso.
+      </p>
+
+      <h4>6.2.2 Recomendación de la tecnología a utilizar</h4>
+      <p>
+        En esta situación, la tecnología más recomendable sería <strong>PyCaret</strong>.
+      </p>
+      <p>
+        Aquí PyCaret tiene bastante ventaja porque está pensada precisamente para simplificar
+        y acelerar el trabajo en machine learning. Automatiza buena parte del preprocesamiento,
+        permite comparar modelos de forma rápida y también facilita tareas como el ajuste
+        de hiperparámetros, la interpretabilidad y el seguimiento de experimentos.
+      </p>
+      <p>
+        Esto hace que sea muy buena opción cuando lo que se busca es probar ideas rápido,
+        obtener una primera solución funcional y reducir la complejidad técnica. En una fase
+        inicial del proyecto, o cuando hay poco tiempo, PyCaret resulta más práctica
+        y más cómoda que Scikit-learn.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Criterios relevantes para la decisión</th>
+            <th>Ventajas Scikit-learn</th>
+            <th>Ventajas PyCaret</th>
+          </tr>
+          <tr>
+            <td>Preprocesamiento automático</td>
+            <td>Tiene herramientas, pero requiere más configuración manual</td>
+            <td>Automatiza gran parte del preprocesamiento</td>
+          </tr>
+          <tr>
+            <td>Comparación de modelos</td>
+            <td>No tiene una función automática específica</td>
+            <td>Permite comparar modelos rápidamente con <code>compare_models()</code></td>
+          </tr>
+          <tr>
+            <td>Interpretabilidad</td>
+            <td>Suele depender más de librerías externas</td>
+            <td>La integra de forma más directa</td>
+          </tr>
+          <tr>
+            <td>MLOps y despliegue</td>
+            <td>Menos integrado de forma nativa</td>
+            <td>Incluye integración con MLflow</td>
+          </tr>
+          <tr>
+            <td>Rapidez de experimentación</td>
+            <td>Requiere más trabajo manual</td>
+            <td>Muy útil para prototipado y pruebas rápidas</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="7">
+      <h2>7. Apéndices y anexos</h2>
+
+      <h3>7.1 Informe de utilización de LLMs</h3>
+
+      <p>
+        Durante el desarrollo del trabajo se han utilizado herramientas basadas en modelos de lenguaje
+        de gran tamaño (LLMs), principalmente ChatGPT, como apoyo complementario en distintas fases
+        de elaboración del informe. Su uso no ha sustituido el análisis propio del grupo, sino que
+        ha servido como herramienta de asistencia para organizar información, mejorar la redacción,
+        detectar errores formales y facilitar la estructuración de algunos apartados.
+      </p>
+
+      <p>
+        En concreto, ChatGPT se ha utilizado para: proponer formulaciones iniciales de algunos textos,
+        resumir ideas principales de ciertas tecnologías, ayudar en la redacción comparativa entre
+        Scikit-learn y PyCaret, sugerir estructuras para las diapositivas de la presentación, apoyar
+        en la corrección de errores de sintaxis y formato en HTML, y revisar la claridad de algunos
+        apartados del documento.
+      </p>
+
+      <p>
+        El grupo ha revisado manualmente toda la información obtenida mediante LLMs antes de incorporarla
+        al trabajo final. Las búsquedas de datos, versiones, cifras, documentación técnica y fuentes
+        utilizadas para la comparación se han contrastado posteriormente con páginas oficiales,
+        documentación técnica, repositorios y recursos académicos. Por tanto, los LLMs se han empleado
+        como apoyo para acelerar tareas de redacción, organización y revisión, pero no como fuente única
+        de información ni como sustitución del criterio del grupo.
+      </p>
+
+      <h4>7.1.1 Principales usos realizados</h4>
+      <ul>
+        <li>Apoyo en la redacción y reformulación de textos.</li>
+        <li>Ayuda en la síntesis de ideas para describir tecnologías y criterios.</li>
+        <li>Propuesta de estructuras para tablas, apartados y presentación.</li>
+        <li>Corrección de errores de sintaxis y formato en HTML.</li>
+        <li>Revisión de claridad y coherencia general del documento.</li>
+      </ul>
+
+      <h4>7.1.2 Limitaciones y precauciones</h4>
+      <ul>
+        <li>Las respuestas generadas por LLMs pueden contener errores o imprecisiones.</li>
+        <li>La información propuesta se ha validado antes de incorporarse al informe.</li>
+        <li>No se han utilizado LLMs como fuente académica principal.</li>
+        <li>La responsabilidad final del contenido corresponde íntegramente al grupo.</li>
+      </ul>
+
+    </section>
+  </main>
+</body>
+
+</html>

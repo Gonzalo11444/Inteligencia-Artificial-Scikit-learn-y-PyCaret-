@@ -1,0 +1,6 @@
+TIEMPOS DE EJECUCIÓN - PROTOTIPO B PYCARET
+==========================================
+Tiempo de configuración setup: 0.6938 segundos
+Tiempo de entrenamiento/comparación: 11.9342 segundos
+Tiempo de predicción: 0.1494 segundos
+Tiempo total: 12.7774 segundos

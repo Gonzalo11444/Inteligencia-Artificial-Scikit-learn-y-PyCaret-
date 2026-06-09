@@ -1,0 +1,12 @@
+INFORMACIÓN DEL DATASET - PROTOTIPO B PYCARET
+================================================
+Filas utilizadas: 3630
+Columnas utilizadas: 37
+Variable objetivo: Target_binary
+Clases utilizadas:
+Target_binary
+Exito     2209
+Riesgo    1421
+Name: count, dtype: int64
+
+Nota: se han eliminado los registros con Target = Enrolled para convertir el problema en clasificación binaria.

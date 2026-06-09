@@ -1,0 +1,37 @@
+Cargando dataset...
+Dataset cargado correctamente: 4424 filas y 37 columnas
+Distribución de la variable objetivo:
+Target_binary
+Exito     2209
+Riesgo    1421
+Name: count, dtype: int64
+Dividiendo datos en entrenamiento y prueba...
+Entrenamiento: 2904 muestras | Prueba: 726 muestras
+
+Comparando 13 modelos con validación cruzada (5 folds)...
+------------------------------------------------------------
+  Logistic Regression                      Acc=0.9067  F1=0.9056  (0.504s)
+  Gradient Boosting Classifier             Acc=0.8974  F1=0.8962  (14.347s)
+  Extra Trees Classifier                   Acc=0.9001  F1=0.8985  (5.412s)
+  Random Forest Classifier                 Acc=0.9008  F1=0.8994  (8.688s)
+  Ada Boost Classifier                     Acc=0.8988  F1=0.8975  (5.503s)
+  Ridge Classifier                         Acc=0.8964  F1=0.8944  (0.484s)
+  Linear Discriminant Analysis             Acc=0.8957  F1=0.8938  (0.442s)
+  SVM - Linear Kernel                      Acc=0.9053  F1=0.9040  (0.468s)
+  Quadratic Discriminant Analysis          Acc=0.8616  F1=0.8605  (0.345s)
+  Decision Tree Classifier                 Acc=0.8409  F1=0.8410  (0.645s)
+  K Neighbors Classifier                   Acc=0.8450  F1=0.8399  (0.388s)
+  Naive Bayes                              Acc=0.8430  F1=0.8409  (0.244s)
+  Dummy Classifier                         Acc=0.6085  F1=0.4604  (0.206s)
+
+→ Mejor modelo seleccionado: Logistic Regression
+
+Entrenando 'Logistic Regression' sobre todo el conjunto de entrenamiento...
+Generando predicciones...
+
+Métricas del prototipo A:
+ accuracy  precision_riesgo  recall_riesgo  f1_riesgo  training_time_seconds  prediction_time_seconds  total_time_seconds  random_state
+ 0.942149          0.932143       0.919014   0.925532               0.020029                 0.002607            0.022636            42
+
+Ejecución completada.
+Resultados guardados en: /content/results

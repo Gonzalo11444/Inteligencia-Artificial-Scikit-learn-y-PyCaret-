@@ -1,0 +1,2699 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es">
+  <meta charset="utf-8">
+  <title>Trabajo en grupo TG1</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Desarrollo con Tecnologías Emergentes. Curso 2025-26<br>
+      Trabajo TG1 del grupo 2<br>
+      Título: Recursos sobre dos tecnologías emergentes para Inteligencia artificial para analítica predictiva de datos
+      en el dominio de la educación <br>
+      Tecnologías: Scikit-learn y Pycaret</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#1">1. Información general</a></li>
+      <li><a href="#2">2. Scikit-learn</a></li>
+      <ul>
+        <li><a href="#2.1">2.1. Cursos</a></li>
+        <li><a href="#2.2">2.2. Documentos</a></li>
+        <li><a href="#2.3">2.3. Software</a></li>
+        <li><a href="#2.4">2.4. Proyectos de I+D</a></li>
+      </ul>
+      <li><a href="#3">3. Pycaret</a></li>
+      <ul>
+        <li><a href="#3.1">3.1. Cursos</a></li>
+        <li><a href="#3.2">3.2. Documentos</a></li>
+        <li><a href="#3.3">3.3. Software</a></li>
+        <li><a href="#3.4">3.4. Proyectos de I+D</a></li>
+      </ul>
+      <li><a href="#4">4. Conclusiones</a></li>
+      <li><a href="#5">5. Aspectos complementarios</a></li>
+      <li><a href="#6">6. Apéndices</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <p></p>
+    <section id=1">
+      <h2>1. Información general</h2>
+      <table>
+        <tr>
+          <th>AUTORES</th>
+          <td>Gonzalo López Menor, Marcos Corrochano Arroyo, Raúl Rodriguez Santos, Alberto García Olmedilla, Diego
+            López Nogales</td>
+        </tr>
+        <tr>
+          <th>PROYECTO SCRUM Y REPOSITORIO EN GITLAB.COM</th>
+          <td>URL del proyecto TG1 en gitlab.com. Cambiando los elementos “?” y “??” de acuerdo con las indicaciones
+            dadas en la práctica.
+            <a href="https://gitlab.com/dte2026a3g02/tg1"> https://gitlab.com/dte2026a3g02/tg1</a>
+          </td>
+        </tr>
+        <tr>
+          <th>TRABAJO PUBLICADO EN GITLAB</th>
+          <td>URL del trabajo publicado en gitlab.com (enlace a este documento tg1.html).
+            <a href="https://gitlab.com/dte2026a3g02/tg1"> https://gitlab.com/dte2026a3g02/tg1</a>
+          </td>
+        </tr>
+        <tr>
+          <th>BURNDOWN CHART</th>
+          <td>URL de la imagen del diagrama Burndown final del Sprint TG1<br>
+            <a
+              href="https://gitlab.com/dte2026a3g02/tg1/-/blob/5dcd894096c0cc33e6479f344b6fd19c4e632678/public/burndown-chart-TG1-02.JPG">
+              https://gitlab.com/dte2026a3g02/tg1/-/blob/5dcd894096c0cc33e6479f344b6fd19c4e632678/public/burndown-chart-TG1-02.JPG</a>
+          </td>
+        </tr>
+        <tr>
+          <th>PRESENTACIÓN DEL TRABAJO</th>
+          <td>URL de la presentación con diapositivas.
+            <a
+              href="https://universidaddealcala-my.sharepoint.com/:p:/g/personal/gonzalo_lopezmenor_edu_uah_es/IQDRgnd9GHOWQpxds6n9uX2_AaowTCtMsMDaOvaUSM07haE?e=KcSinb">
+              https://universidaddealcala-my.sharepoint.com/:p:/g/personal/gonzalo_lopezmenor_edu_uah_es/IQDRgnd9GHOWQpxds6n9uX2_AaowTCtMsMDaOvaUSM07haE?e=KcSinb</a>
+          </td>
+        </tr>
+        <tr>
+          <th>LINEA DE INVESTIGACIÓN</th>
+          <td>
+            La línea de investigación definida en este trabajo se centra en la aplicación de
+            <strong>recursos sobre dos tecnologías emergentes para Inteligencia artificial para analítica predictiva de
+              datos
+              en el dominio de la educación</strong>. En concreto, se analiza cómo las técnicas
+            de aprendizaje automático permiten procesar datos, detectar patrones de comportamiento y generar modelos
+            predictivos que pueden utilizarse para mejorar la toma de decisiones en entornos educativos. Esta línea
+            resulta relevante porque combina inteligencia artificial y análisis de datos en un ámbito con impacto real,
+            permitiendo desarrollar soluciones orientadas a la personalización, la predicción y la optimización de
+            procesos.
+          </td>
+        </tr>
+        <tr>
+          <th>TECNOLOGÍAS Y SU RELACION CON LA LINEA DE INVESTIGACIÓN</th>
+          <td>
+            Las tecnologías seleccionadas, <strong>scikit-learn</strong> y <strong>PyCaret</strong>, están directamente
+            relacionadas con la línea de investigación
+            “<strong>Inteligencia artificial para analítica predictiva de datos en el dominio de la educación</strong>”,
+            ya que ambas permiten desarrollar
+            modelos de aprendizaje automático orientados al análisis de datos y a la predicción de resultados.
+            Scikit-learn aporta una base sólida y
+            flexible para construir, entrenar y evaluar modelos predictivos de forma más detallada, mientras que PyCaret
+            facilita la automatización de
+            muchas de estas tareas, agilizando la comparación, selección y validación de modelos. En el ámbito
+            educativo, estas tecnologías pueden
+            aplicarse al estudio del rendimiento académico, la detección temprana de riesgo de abandono, la segmentación
+            de estudiantes o la predicción
+            de necesidades de apoyo, lo que las convierte en herramientas adecuadas para investigar el uso de la
+            inteligencia artificial en la mejora de
+            la toma de decisiones basadas en datos.
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="2">
+      <h2>2. Scikit-learn</h2>
+      <h3 id=2.1>2.1 Cursos</h3>
+      <h4>2.1.1 Curso 1</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Gonzalo López Menor</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>Machine learning in Python with scikit-learn</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Curso online oficial orientado al aprendizaje práctico de machine learning con scikit-learn en Python.
+            Introduce de forma progresiva los conceptos fundamentales del aprendizaje automático y enseña a construir
+            pipelines de modelado predictivo, evaluar modelos y comprender sus limitaciones. Está diseñado como una
+            introducción sólida para seguir avanzando después hacia retos más complejos de inteligencia artificial,
+            minería de texto o ciencia de datos.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td> Introducción y conceptos de machine learning; pipeline de modelado predictivo; exploración de datos
+            tabulares;
+            ajuste de modelos con datos numéricos; tratamiento de datos categóricos; selección del mejor modelo;
+            overfitting y underfitting; curvas de validación y aprendizaje; compromiso sesgo-varianza; ajuste manual y
+            automático de hiperparámetros; modelos lineales; árboles de decisión; métodos ensemble; evaluación del
+            rendimiento en clasificación y regresión</td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>36 horas aproximadas, en modalidad self-paced (a ritmo propio)</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito.</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Es especialmente útil porque es un curso oficial y actualizado, creado por desarrolladores principales de
+            scikit-learn. Además, combina teoría y práctica con notebooks y ejercicios, por lo que permite aprender de
+            forma directa el uso real de la biblioteca y sus buenas prácticas. Para el TG1 resulta muy adecuado porque
+            ayuda a justificar scikit-learn como una tecnología accesible, madura y fácil de aplicar en proyectos de
+            machine learning.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha localizado mediante búsqueda web con los términos “official scikit-learn course” y “scikit-learn
+            MOOC”.
+            Después se ha validado en la web oficial/documentación de scikit-learn y en la página del curso en FUN MOOC.
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td> <a href="https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/">
+              https://www.fun-mooc.fr/en/courses/machine-learning-python-scikit-learn/
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.1.2 Curso 2</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>Digital and Informational Skills</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Curso formativo internacional orientado al desarrollo de competencias en analítica de datos y aprendizaje
+            automático, proporcionando una base sólida para el uso de herramientas como scikit-learn. Se abordan
+            conceptos
+            clave como preprocesamiento de datos, modelado predictivo y evaluación de algoritmos, fundamentales para
+            aplicar
+            técnicas de ML en entornos reales. Está dirigido a estudiantes que buscan iniciarse en el desarrollo de
+            modelos
+            predictivos, especialmente en dominios como la educación, donde el análisis de datos permite mejorar la toma
+            de
+            decisiones.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>Introducción a la analítica de datos, fundamentos de inteligencia artificial,
+            gestión y tratamiento de datos, seguridad digital y privacidad, aplicaciones prácticas
+            en toma de decisiones</td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>El curso tiene un duración de 20 horas si se escoge el curso online, y 25 en el caso en el
+            que sea presencial.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito para estudiantes a partir del 3er o 4to año de cualquier disciplina.</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Es útil porque introduce los fundamentos de la analítica de datos y del aprendizaje automático,
+            que son esenciales para el uso de la biblioteca scikit-learn. Permite comprender conceptos clave como
+            preprocesamiento de datos, selección de características y evaluación de modelos. En el contexto de la
+            analíticapredictiva en educación, facilita el desarrollo de modelos capaces de predecir el rendimiento
+            académico, detectar abandono escolar o personalizar procesos de aprendizaje mediante técnicas implementadas
+            en scikit-learn.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado mediante la búsqueda de cursos en la red EUGLOH relacionados con analítica de datos
+            y aprendizaje automático, utilizando términos como "machine learning", "data analytics" y "inteligencia
+            artificial",
+            con el objetivo de identificar formación compatible con el uso de scikit-learn en entornos académicos y de
+            investigación.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td> <a
+              href="https://www.eugloh.eu/courses-trainings/activities/eugloh-living-lab-digital-and-informational-skills/">
+              https://www.eugloh.eu/courses-trainings/activities/eugloh-living-lab-digital-and-informational-skills/
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.1.3 Curso 3</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Raúl Rodríguez Santos</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>HarvardX: Using Python for Research</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>
+            Curso online de HarvardX orientado a llevar los conocimientos básicos de Python
+            un poco más allá y aplicarlos a contextos de investigación. A lo largo del curso
+            se trabajan herramientas habituales en investigación, módulos de Python usados
+            en computación científica, varios casos prácticos y una parte final de
+            aprendizaje estadístico con la librería scikit-learn. En general, es un curso
+            bastante útil para aprender a usar Python de forma más aplicada y relacionarlo
+            con análisis de datos y machine learning.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            Semana 1: Python Basics.<br>
+            Semana 2: Python Research Tools.<br>
+            Semanas 3 y 4: Case Studies.<br>
+            Semana 5: Statistical Learning con scikit-learn.
+          </td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>
+            12 semanas, con una dedicación estimada de entre 2 y 4 horas por semana.
+            En la ficha del curso aparece además como self-paced, es decir,
+            que cada alumno puede seguirlo a su propio ritmo.
+          </td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>
+            El curso ofrece modalidad Audit course y también la opción de obtener
+            el certificado HarvardX. En el momento de la consulta, el certificado
+            aparecía con un precio de 249 USD.
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>
+            Este curso es útil para el trabajo porque no se queda solo en explicar Python
+            de forma básica, sino que lo conecta con herramientas y situaciones más reales
+            de investigación. Además, incluye una parte concreta de statistical learning
+            usando scikit-learn, lo que permite relacionarlo directamente con la tecnología
+            que estamos analizando. También resulta interesante porque está asociado
+            a HarvardX, lo que le da bastante respaldo académico.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha encontrado buscando cursos de universidades reconocidas que estuvieran
+            relacionados con Python, análisis de datos y machine learning.
+            Después se revisó la ficha oficial del curso y su programa para comprobar
+            que incluía una parte específica de statistical learning con scikit-learn.
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a href="https://www.edx.org/learn/python/harvard-university-using-python-for-research">
+              https://www.edx.org/learn/python/harvard-university-using-python-for-research
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.1.4 Curso 4</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Diego López Nogales</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>Analítica Predictiva para Ciencia de Datos</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>En este curso especializado se abordan los aspectos fundamentales del análisis matemático y estadístico
+            para Ciencia de Datos. El contenido a desarrollar incluye los fundamentos de programación en Python, así
+            como las estructuras de datos más utilizadas por los científicos de datos en la actualidad.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>01
+            Introducción a la programación con Python
+
+            02
+            Estructuras de Datos con Python
+
+            03
+            Ciencia de Datos con Probabilidad y Simulación
+
+            04
+            Medición, Extracción de Datos y Análisis Descriptivo con Python
+
+            05
+            Medición, Extracción de Datos y Análisis Inferencial Lineal con Statsmodels
+
+            06
+            Medición, Extracción de Datos y Análisis Inferencial No Lineal con Scikit Learn
+
+            07
+            Fundamentos de Series de Tiempo
+
+            08
+            Predicción con Series de Tiempo y Machine Learning</td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>32 horas (8 semanas, 4 horas por semana)</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>US $135.00</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Aprenderas a utilizar herramientas de computación interactiva.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>De forma autónoma navegando e indagando por internet encontré esta página web la cual estaba relacionada
+            con la línea de investigación.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a href="https://ideemllc.com/info-curso?titulo=Anal%C3%ADtica+Predictiva+para+Ciencia+de+Datos">
+              https://ideemllc.com/info-curso?titulo=Anal%C3%ADtica+Predictiva+para+Ciencia+de+Datos
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.1.5 Curso 5</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>Supervised Machine Learning: Regression and Classification</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Primer curso de la Machine Learning Specialization, desarrollada por Stanford Online y DeepLearning.AI y
+            disponible en Coursera. Impartido por Andrew Ng, uno de los referentes mundiales en inteligencia artificial,
+            introduce los fundamentos del aprendizaje automático supervisado con Python y scikit-learn. Cubre regresión
+            lineal, regresión logística y las mejores prácticas de desarrollo de modelos predictivos. Forma parte de una
+            especialización de tres cursos orientada a construir aplicaciones reales de IA.</td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>Aproximadamente 33 horas en modalidad self-paced. Estimado en 3 semanas a unas 11 h/semana.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            Semana 1: Introducción al machine learning supervisado y regresión lineal con NumPy y scikit-learn.
+            Semana 2: Regresión con múltiples variables, feature scaling, gradient descent vectorizado.
+            Semana 3: Clasificación con regresión logística; problema de overfitting y regularización (L1/L2).
+            Laboratorios prácticos: implementación de modelos con scikit-learn sobre datasets reales.
+          </td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito en modalidad auditoría. El certificado requiere suscripción a Coursera Plus (aprox 41 €/mes).
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Es especialmente relevante para la línea de investigación porque emplea scikit-learn de forma explícita
+            para construir modelos predictivos desde cero. Al estar impartido por Stanford University (universidad
+            número 1 en el ranking de Shanghai) ofrece un respaldo académico de primer nivel. La regresión y la
+            clasificación son las técnicas centrales de la analítica predictiva en educación (predicción de rendimiento,
+            detección de riesgo de abandono), lo que convierte este curso en una referencia directamente aplicable a
+            nuestra línea de investigación.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha localizado mediante búsqueda en Coursera con los términos "scikit-learn supervised machine learning
+            Stanford" y validando que el programa de estudios incluía el uso explícito de scikit-learn y que la
+            institución que lo imparte figuraba entre las primeras posiciones del ranking de Shanghai.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td><a
+              href="https://www.coursera.org/learn/machine-learning">https://www.coursera.org/learn/machine-learning</a>
+          </td>
+        </tr>
+      </table>
+
+      <h3 id=2.2>2.2 Documentos (Artículos, libros, foros, blogs)</h3>
+      <h4>2.2.1 Documento 1</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</td>
+          <td>Gonzalo Lopez Menor</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>User Guide — scikit-learn</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td> Guía oficial de uso de scikit-learn que reúne de forma estructurada la documentación principal de la
+            biblioteca.
+            Explica los conceptos básicos de machine learning en Python y desarrolla los módulos y utilidades más
+            importantes
+            para clasificación, regresión, clustering, reducción de dimensionalidad, selección de modelos,
+            preprocesamiento
+            de datos e integración en pipelines.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>Introducción; aprendizaje supervisado; aprendizaje no supervisado; selección y evaluación de modelos;
+            inspección de modelos; visualizaciones; datasets; transformación y preprocesamiento de datos;
+            extracción de características; composición de estimadores y pipelines; ajuste de hiperparámetros;
+            utilidades y ejemplos prácticos.</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Es útil porque es la referencia oficial de la tecnología y permite aprender tanto la visión general como
+            el uso práctico de cada módulo. Además, al estar organizada por temas, resulta muy adecuada para consultar
+            funciones concretas, comparar algoritmos disponibles y justificar académicamente qué ofrece scikit-learn
+            dentro de un proyecto de aprendizaje automático.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha localizado mediante búsqueda web con los términos “scikit-learn official user guide” y se ha
+            verificado
+            en la documentación oficial del proyecto.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td><a
+              href="https://scikit-learn.org/stable/user_guide.html">https://scikit-learn.org/stable/user_guide.html</a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.2.2 Documento 2</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</td>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>API design for machine learning software: experiences from the scikit-learn project</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Artículo académico que describe el diseño de la API de scikit-learn, centrado en la creación de una
+            interfaz unificada para algoritmos de aprendizaje automático en Python. Explica cómo la librería
+            implementa un diseño consistente para modelos de clasificación, regresión, clustering y preprocesamiento
+            de datos, facilitando la construcción de pipelines de machine learning. El documento destaca la importancia
+            de la simplicidad, reutilización y compatibilidad con el ecosistema científico de Python (NumPy y SciPy),
+            elementos clave para el desarrollo de sistemas de analítica predictiva.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>Introducción al diseño de software para machine learning, principios de diseño de la API de scikit-learn,
+            interfaz común para estimadores y transformadores, construcción de pipelines de aprendizaje automático,
+            integración con el ecosistema científico de Python, casos de uso y aplicaciones prácticas</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Es útil porque explica la arquitectura interna de scikit-learn y cómo se estructuran los flujos de
+            trabajo de machine learning. Esto es fundamental para aplicar analítica predictiva en educación, ya
+            que permite construir modelos reproducibles, escalables y fáciles de integrar en sistemas de predicción
+            de rendimiento académico o análisis del comportamiento estudiantil.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha localizado mediante búsqueda en arXiv de artículos científicos relacionados con scikit-learn
+            y diseño de APIs en sistemas de machine learning en Python, filtrando publicaciones académicas relevantes
+            para analítica de datos</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td> <a href="https://arxiv.org/abs/1309.0238">
+              https://arxiv.org/abs/1309.0238
+            </a>
+        </tr>
+      </table>
+      <h4>2.2.3 Documento 3</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Raúl Rodríguez Santos</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>
+            Predicting new student performances and identifying important attributes of
+            admission data using machine learning techniques with hyperparameter tuning
+          </td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>
+            Este artículo estudia cómo predecir el rendimiento de nuevos estudiantes universitarios
+            a partir de datos de admisión, utilizando distintas técnicas de machine learning.
+            El trabajo analiza información real de 5.919 estudiantes recogida entre 2011 y 2021
+            en varios programas de la Faculty of Science de Ubon Ratchathani University, en Tailandia.
+            Para desarrollar el análisis se utilizan herramientas como Jupyter Notebook, Python 3
+            y Scikit-Learn, comparando diferentes modelos y aplicando ajuste de hiperparámetros
+            para mejorar los resultados. El estudio concluye que el modelo Random Forest obtiene
+            el mejor rendimiento y además permite identificar qué variables influyen más en el éxito
+            académico del alumnado.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            Introducción; revisión de literatura; concepto y definición del problema;
+            metodología de investigación; implementación y resultados experimentales;
+            conclusiones y futuras líneas de trabajo.
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>
+            Este documento es muy útil para nuestro trabajo porque relaciona de forma directa
+            Scikit-Learn con la analítica predictiva en educación, que es justo la línea de investigación
+            que hemos elegido. No se queda solo en explicar teoría, sino que muestra una aplicación
+            real de machine learning para predecir el rendimiento académico y detectar qué factores
+            pueden ser más importantes en los resultados de los estudiantes. Además, como utiliza
+            Scikit-Learn de forma explícita, nos sirve para justificar que esta tecnología es adecuada
+            para desarrollar modelos predictivos en contextos educativos.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha encontrado buscando artículos académicos que relacionaran Scikit-Learn con
+            predicción del rendimiento estudiantil y analítica predictiva en educación. Para ello
+            se utilizaron búsquedas como “scikit-learn student performance prediction”,
+            “educational predictive analytics scikit-learn” y “student success machine learning
+            scikit-learn”. Después se comprobó que el artículo mencionaba de forma clara el uso
+            de Scikit-Learn dentro de la metodología.
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a
+              href="https://www.ejmste.com/download/predicting-new-student-performances-and-identifying-important-attributes-of-admission-data-using-13863.pdf">
+              https://www.ejmste.com/download/predicting-new-student-performances-and-identifying-important-attributes-of-admission-data-using-13863.pdf
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.2.4 Documento 4</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</td>
+          <td>Diego López Nogales</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>How to Use Generative AI in Educational Researchv</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Las tecnologías de Inteligencia Artificial han impactado nuestro mundo de formas que no habríamos
+            imaginado hace una década. La IA generativa (GenAI), un subconjunto potente, complejo y de uso general de la
+            IA, se ha puesto a disposición del público en los últimos años. El efecto de la GenAI en la educación, la
+            investigación y la práctica académica es amplio y emocionante, pero también profundamente preocupante.
+            Aunque la GenAI tiene el potencial de transformar la práctica de la investigación educativa, existen pocos
+            recursos que aclaren por qué, cuándo y cómo estas herramientas pueden utilizarse de manera ética y sensible.
+            Este texto presenta áreas clave de reflexión para los investigadores en educación que deseen utilizar la
+            GenAI, entre ellas el examen de la investigación existente, la evaluación crítica de los beneficios y
+            riesgos de la GenAI en la investigación educativa, y la aportación de ejemplos de buenas y malas prácticas.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            A Note on Terminology
+            1. Introduction
+            2. Contextualising GenAI in Education
+            3. GenAI and Educational Research: Theoretical Foundations
+            4. The Potential Benefits of GenAI in Educational Research
+            5. The Risks of Using GenAI in Educational Research
+            6. How GenAI Shapes Educational Research Processes
+            7. Looking to the Future
+            8. Conclusion
+            9. How GenAI was Used in This Element
+            10. A Checklist for GenAI Use in Educational Research</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Este documento resulta útil porque aborda de forma específica el uso de la inteligencia artificial
+            generativa en la investigación educativa, lo que le da un enfoque mucho más concreto y aplicable que otras
+            fuentes más generales sobre IA. Su valor está en que no solo explica el potencial de estas herramientas,
+            sino que también analiza sus riesgos, sus implicaciones éticas y la manera en que pueden emplearse de forma
+            responsable en el ámbito académico. Además, incluye ejemplos de buenas y malas prácticas, algo especialmente
+            relevante para comprender cómo integrar la GenAI con criterio dentro de procesos de investigación. Al ser
+            una fuente reciente y bien estructurada, también ofrece una base sólida para contextualizar el tema y apoyar
+            un trabajo académico con información actual y especializada.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Búsqueda web, buscando entre las Universidades mejor rankeadas del ranking de Shanghai, relacionada con la
+            linea de investigación seleccionada. </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a
+              href="https://www.cambridge.org/es/universitypress/subjects/education/education-policy-strategy-and-reform/how-use-generative-ai-educational-research?format=PB#description">
+              https://www.cambridge.org/es/universitypress/subjects/education/education-policy-strategy-and-reform/how-use-generative-ai-educational-research?format=PB#description
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.2.5 Documento 5</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</td>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>A Study on Dropout Prediction for University Students Using Machine Learning</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Artículo científico publicado en MDPI Applied Sciences (noviembre de 2023) que presenta un modelo de
+            predicción del abandono universitario mediante aprendizaje automático. El estudio analiza registros
+            académicos reales de 20.050 estudiantes de Sahmyook University y compara múltiples algoritmos (Regresión
+            Logística, Árbol de Decisión, Random Forest, SVM, Red Neuronal Profunda y LightGBM) implementados con
+            scikit-learn en Python. El trabajo proporciona métricas de evaluación detalladas y destaca qué variables del
+            expediente académico influyen más en la predicción del abandono.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            1. Introducción.
+            2. Revisión de literatura relacionada.
+            3. Metodología: conjunto de datos, selección de atributos y algoritmos.
+            4. Implementación y resultados experimentales (comparativa de modelos con scikit-learn).
+            5. Conclusiones y líneas futuras de investigación.
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Este artículo conecta directamente scikit-learn con el dominio educativo de nuestra línea de
+            investigación, ya que aplica la librería para predecir el abandono universitario a partir de datos
+            académicos reales. Permite ver cómo se diseña un pipeline completo de machine learning (preprocesamiento,
+            entrenamiento, evaluación) con scikit-learn en un contexto educativo, y justifica académicamente la elección
+            de esta tecnología para proyectos de analítica predictiva en educación. Además, es un artículo de acceso
+            abierto y reciente (2023), lo que garantiza relevancia y disponibilidad.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado buscando en Google Scholar y MDPI con los términos "scikit-learn dropout prediction
+            university 2023", filtrando artículos que mencionasen scikit-learn de forma explícita en la sección de
+            metodología y que estuviesen relacionados con predicción del abandono o rendimiento académico.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td><a href="https://www.mdpi.com/2076-3417/13/21/12004">https://www.mdpi.com/2076-3417/13/21/12004</a></td>
+        </tr>
+      </table>
+
+      <h3 id=2.3>2.3 Software (herramientas, editores, etc. para desarrollar con la tecnología)</h3>
+      <h4>2.3.1 Software 1</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Gonzalo López Menor</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>Visual Studio Code</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>
+            Editor de código fuente ligero y multiplataforma utilizado para desarrollar aplicaciones en múltiples
+            lenguajes,
+            incluyendo Python. En el contexto de scikit-learn permite escribir, ejecutar y depurar código, gestionar
+            entornos
+            virtuales y trabajar con notebooks interactivos mediante extensiones, facilitando el desarrollo completo de
+            proyectos de machine learning.
+          </td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito.</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>Freeware (basado en código abierto).</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha localizado mediante búsqueda web con los términos “best IDE for Python machine learning” y “tools for
+            scikit-learn development”, validando su uso en la documentación oficial de Microsoft y en recursos de
+            desarrollo
+            en Python.
+          </td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td>
+            <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>
+          </td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td>
+            <a href="https://code.visualstudio.com/docs/python/python-tutorial">
+              https://code.visualstudio.com/docs/python/python-tutorial
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.3.2 Software 2</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>Pandas</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>Librería de Python utilizada para la manipulación, limpieza y análisis de datos estructurados.
+            Es fundamental en flujos de trabajo de machine learning, ya que permite preparar datasets antes
+            de ser utilizados por algoritmos de aprendizaje automático como los de scikit-learn. En el contexto
+            de analítica predictiva en educación, facilita el tratamiento de datos académicos, registros de
+            estudiantes y variables de rendimiento.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>BSD License (código abierto)</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado mediante búsqueda de herramientas de análisis de datos en Python utilizadas
+            en pipelines de machine learning, consultando documentación oficial y recursos de ciencia de
+            datos aplicados a inteligencia artificial.</td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td> <a href="https://pandas.pydata.org/">
+              https://pandas.pydata.org/
+            </a>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td> <a href="https://pandas.pydata.org/docs/user_guide/">
+              https://pandas.pydata.org/docs/user_guide/
+            </a>
+        </tr>
+      </table>
+      <h4>2.3.3 Software 3</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Raúl Rodríguez Santos</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>Anaconda Distribution</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>
+            Anaconda Distribution sirve para preparar un entorno de trabajo completo para proyectos
+            de machine learning en Python. En relación con Scikit-Learn, resulta útil porque facilita
+            la instalación de librerías, la gestión de entornos y el uso de herramientas como
+            Jupyter Notebook o JupyterLab para programar, probar modelos y analizar resultados
+            de forma interactiva.
+          </td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>
+            Tiene un plan gratuito. En la página de precios aparece la modalidad Free con un precio de 0 $.
+            También hay otros planes algo más compeltos y ya otros dedicados a empresas grandes.
+          </td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>
+            El uso depende del plan de Anaconda. La web indica que existe una opción gratuita,
+            pero que algunas organizaciones grandes pueden necesitar una licencia de pago.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha encontrado buscando herramientas útiles para trabajar con Scikit-Learn en Python.
+            Después se ha revisado la web oficial de Anaconda para comprobar que permite crear
+            entornos, instalar paquetes y trabajar con herramientas de ciencia de datos y machine learning
+          </td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td>
+            <a href="https://www.anaconda.com/download">
+              https://www.anaconda.com/download
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td>
+            <a href="https://scikit-learn.org/stable/install.html">
+              https://scikit-learn.org/stable/install.html
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.3.4 Software 4</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Diego López Nogales</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>JupyterLab</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>Sirve para desarrollar y ejecutar proyectos de Python y machine learning de forma interactiva. Permite
+            trabajar con notebooks, escribir código, analizar datos, visualizar resultados y probar modelos creados con
+            scikit-learn.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>Open source. Licencia BSD de 3 cláusulas (BSD-3-Clause).</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado buscando herramientas de desarrollo compatibles con Python y scikit-learn para analítica
+            predictiva, usando términos como “scikit-learn development tools”, “Python notebook machine learning” y
+            “JupyterLab scikit-learn”.</td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td>
+            <a href="https://jupyter.org/">
+              https://jupyter.org/
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td>
+            <a href="https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html">
+              https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>2.3.5 Software 5</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>NumPy</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>NumPy es la biblioteca fundamental de computación numérica para Python. Proporciona el tipo de dato
+            ndarray (array multidimensional) sobre el que scikit-learn opera internamente para representar conjuntos de
+            datos, vectores de características y matrices. Sin NumPy no es posible trabajar con scikit-learn, ya que
+            todos los modelos reciben y devuelven arrays NumPy. En el contexto de analítica predictiva en educación,
+            NumPy se utiliza para almacenar y transformar eficientemente los datos de los estudiantes antes y después de
+            aplicar los algoritmos de machine learning.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito.</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>BSD-3-Clause (código abierto).</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha identificado revisando la documentación oficial de scikit-learn, donde NumPy aparece como
+            dependencia obligatoria y se menciona explícitamente como la base de la representación de datos de la
+            librería. También se verificó en la guía de instalación oficial de scikit-learn.</td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td><a href="https://numpy.org/">https://numpy.org/</a></td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td><a
+              href="https://numpy.org/doc/stable/user/quickstart.html">https://numpy.org/doc/stable/user/quickstart.html</a>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <h4>2.4.1 Proyecto de I+D 1</h4>
+    <table>
+      <tr>
+        <th>ANALISTA</th>
+        <td>Gonzalo López Menor</td>
+      </tr>
+      <tr>
+        <th>TITULO</th>
+        <td>Machine Learning Research – University of Oxford</td>
+      </tr>
+      <tr>
+        <th>RESUMEN</th>
+        <td>
+          Línea de investigación desarrollada por el departamento de Computer Science de la Universidad de Oxford
+          centrada en machine learning y sus aplicaciones en distintos ámbitos como salud, ciencia de datos y sistemas
+          inteligentes. Incluye el desarrollo de modelos predictivos, algoritmos de aprendizaje automático y análisis de
+          datos.
+        </td>
+      </tr>
+      <tr>
+        <th>FECHAS</th>
+        <td>Proyectos activos en la actualidad</td>
+      </tr>
+      <tr>
+        <th>PRESUPUESTO</th>
+        <td>No especificado públicamente</td>
+      </tr>
+      <tr>
+        <th>ENTIDADES PARTICIPANTES</th>
+        <td>University of Oxford y colaboradores académicos e industriales</td>
+      </tr>
+      <tr>
+        <th>CÓMO SE HA ENCONTRADO</th>
+        <td>
+          Búsqueda en Google con los términos “Oxford machine learning research projects” y validación en la web
+          oficial.
+        </td>
+      </tr>
+      <tr>
+        <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+        <td>
+          Estos proyectos aplican técnicas de machine learning que pueden implementarse mediante herramientas como
+          scikit-learn, permitiendo el desarrollo de modelos predictivos y análisis de datos dentro de la línea de
+          investigación seleccionada.
+        </td>
+      </tr>
+      <tr>
+        <th>URL PROYECTO</th>
+        <td>
+          <a href="https://www.cs.ox.ac.uk/research/ai_ml/">
+            https://www.cs.ox.ac.uk/research/ai_ml/
+          </a>
+        </td>
+      </tr>
+    </table>
+    <h4>2.4.2 Proyecto de I+D 2</h4>
+    <table>
+      <tr>
+        <th>ANALISTA</th>
+        <td>Alberto García Olmedilla</td>
+      </tr>
+      <tr>
+        <th>TITULO</th>
+        <td>AI4EDU – Artificial Intelligence for Education</td>
+      </tr>
+      <tr>
+        <th>RESUMEN</th>
+        <td>Proyecto europeo centrado en la aplicación de técnicas de inteligencia artificial y analítica
+          de datos en el ámbito educativo. Su objetivo es mejorar los procesos de enseñanza-aprendizaje
+          mediante el uso de modelos predictivos que permitan analizar el rendimiento de los estudiantes,
+          detectar riesgos de abandono y personalizar la experiencia educativa. El proyecto integra
+          tecnologías de machine learning y análisis de datos para apoyar la toma de decisiones en
+          instituciones educativas.</td>
+      </tr>
+      <tr>
+        <th>FECHAS</th>
+        <td>No especificadas</td>
+      </tr>
+      <tr>
+        <th>PRESUPUESTO</th>
+        <td>No especificado</td>
+      <tr>
+        <th>ENTIDADES PARTICIPANTES</th>
+        <td>Universidades europeas, centros de investigación y organizaciones tecnológicas dentro
+          de programas de innovación educativa de la Unión Europea.</td>
+      </tr>
+      <tr>
+        <th>CÓMO SE HA ENCONTRADO</th>
+        <td>Se ha localizado mediante búsqueda de proyectos europeos de I+D relacionados con inteligencia artificial
+          aplicada a la educación, utilizando palabras clave como "AI in education", "learning analytics" y "predictive
+          analytics in education".</td>
+      </tr>
+      <tr>
+        <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+        <td>El proyecto está directamente relacionado con la línea de investigación definida, ya que aplica técnicas de
+          analítica predictiva
+          mediante algoritmos de machine learning (como los implementados en scikit-learn) para el análisis de datos
+          educativos. Permite
+          desarrollar modelos que predicen el rendimiento académico y optimizan los procesos educativos, alineándose con
+          el uso de herramientas
+          de análisis de datos como pandas y scikit-learn.</td>
+      </tr>
+      <tr>
+        <th>URL PROYECTO</th>
+        <td> <a href="https://ai4edu.eu/">
+            https://ai4edu.eu/
+          </a>
+      </tr>
+    </table>
+    <h4>2.4.3 Proyecto de I+D 3</h4>
+    <table>
+      <tr>
+        <th>ANALISTA</th>
+        <td>Raúl Rodríguez Santos</td>
+      </tr>
+      <tr>
+        <th>TITULO</th>
+        <td>AFEL – Analytics For Everyday Learning</td>
+      </tr>
+      <tr>
+        <th>RESUMEN</th>
+        <td>
+          AFEL es un proyecto europeo de I+D centrado en el uso de learning analytics para analizar
+          datos de aprendizaje que aparecen en entornos sociales y plataformas online. Su objetivo
+          principal fue desarrollar, probar y evaluar métodos y aplicaciones capaces de estudiar
+          el comportamiento de los estudiantes y mejorar los procesos de aprendizaje informal
+          y colectivo. El proyecto se planteó desde un enfoque multidisciplinar y orientado
+          a datos reales, buscando personalizar y mejorar la experiencia de aprendizaje
+          a partir del análisis del comportamiento de los usuarios.
+        </td>
+      </tr>
+      <tr>
+        <th>FECHAS</th>
+        <td>
+          Inicio: 1 de diciembre de 2015.<br>
+          Fin: 30 de noviembre de 2018.
+        </td>
+      </tr>
+      <tr>
+        <th>PRESUPUESTO</th>
+        <td>
+          Coste total del proyecto: 2.581.940 €.
+        </td>
+      </tr>
+      <tr>
+        <th>ENTIDADES PARTICIPANTES</th>
+        <td>
+          University of Galway (coordinador), RIAM InteLearning Lab SL,
+          Gottfried Wilhelm Leibniz Universitaet Hannover,
+          Medien in der Bildung Stiftung, Know Center Research GmbH
+          y The Open University.
+        </td>
+      </tr>
+      <tr>
+        <th>CÓMO SE HA ENCONTRADO</th>
+        <td>
+          Se ha encontrado buscando proyectos europeos relacionados con learning analytics,
+          machine learning y educación en la base de datos de CORDIS.
+          Después se ha revisado la ficha oficial del proyecto para comprobar que incluía
+          fechas, presupuesto, participantes y una relación clara con el análisis de datos
+          de aprendizaje.
+        </td>
+      </tr>
+      <tr>
+        <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+        <td>
+          Este proyecto se relaciona bien con la línea de investigación del grupo porque trabaja
+          con analítica de datos en el ámbito educativo y busca entender mejor el comportamiento
+          del alumnado para personalizar y mejorar el aprendizaje. Su relación con Scikit-Learn
+          está en que el tipo de tareas que describe, como análisis de datos, aprendizaje automático
+          y estudio de patrones de comportamiento, pueden desarrollarse con herramientas de machine
+          learning como esta librería. Aun así, la ficha oficial del proyecto no menciona
+          explícitamente Scikit-Learn, por lo que la relación debe entenderse como tecnológica
+          y metodológicamente compatible, no como una herramienta confirmada dentro del proyecto.
+        </td>
+      </tr>
+      <tr>
+        <th>URL PROYECTO</th>
+        <td>
+          <a href="https://cordis.europa.eu/project/id/687916">
+            https://cordis.europa.eu/project/id/687916
+          </a>
+        </td>
+      </tr>
+    </table>
+    <h4>2.4.4 Proyecto de I+D 4</h4>
+    <table>
+      <tr>
+        <th>ANALISTA</th>
+        <td>Diego López Nogales</td>
+      </tr>
+      <tr>
+        <th>TITULO</th>
+        <td>AskOski: Supporting undergraduate success with AI adaptive tutoring and course recommendation</td>
+      </tr>
+      <tr>
+        <th>RESUMEN</th>
+        <td>Proyecto de I+D de la University of California, Berkeley, orientado a mejorar el éxito académico en
+          educación superior mediante inteligencia artificial. El proyecto aplica investigación en big data y machine
+          learning al asesoramiento académico, la recomendación de asignaturas y la tutoría adaptativa. Además, trabaja
+          con modelos predictivos y con una pipeline de aprendizaje automático y preprocesado de datos en un entorno
+          basado en Python.</td>
+      </tr>
+      <tr>
+        <th>FECHAS</th>
+        <td>Proyecto activo. En la información pública consultada figura operativo y en producción en Berkeley; la ficha
+          revisada corresponde a Spring 2026. No se especifica una fecha de inicio exacta.</td>
+      </tr>
+      <tr>
+        <th>PRESUPUESTO</th>
+        <td>No especificado en la información pública consultada.</td>
+      <tr>
+        <th>ENTIDADES PARTICIPANTES</th>
+        <td>University of California, Berkeley; Berkeley School of Education; proyecto liderado por el profesor Zachary
+          A. Pardos; Computational Approaches to Human Learning research lab; equipo de desarrolladores e investigadores
+          vinculados al proyecto AskOski y OATutor.</td>
+      </tr>
+      <tr>
+        <th>CÓMO SE HA ENCONTRADO</th>
+        <td>Se ha encontrado buscando proyectos de universidades del ranking de Shanghái relacionados con inteligencia
+          artificial, educación, analítica predictiva y scikit-learn, usando búsquedas como “Berkeley education machine
+          learning project”, “predictive models education Berkeley” y “scikit-learn education analytics university”.
+        </td>
+      </tr>
+      <tr>
+        <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+        <td>Este proyecto está relacionado con la línea de investigación “Inteligencia artificial para analítica
+          predictiva de datos en el dominio de la educación” porque utiliza machine learning para mejorar la orientación
+          académica y apoyar la toma de decisiones en educación superior. Su relación con scikit-learn es especialmente
+          alta porque la descripción pública del proyecto menciona entrenamiento de modelos predictivos, backend en
+          Python y una pipeline de machine learning y preprocesado de datos, que son tareas típicamente realizables con
+          scikit-learn. No obstante, la fuente pública no confirma de forma explícita que esa librería concreta sea la
+          utilizada.</td>
+      </tr>
+      <tr>
+        <th>URL PROYECTO</th>
+        <td>
+          <a href="https://urapprojects.berkeley.edu/detail.php?id=19985-1">
+            https://urapprojects.berkeley.edu/detail.php?id=19985-1
+          </a>
+        </td>
+      </tr>
+    </table>
+    <h4>2.4.5 Proyecto de I+D 5</h4>
+    <table>
+      <tr>
+        <th>ANALISTA</th>
+        <td>Marcos Corrochano Arroyo</td>
+      </tr>
+      <tr>
+        <th>TITULO</th>
+        <td>ELISE – European Learning and Intelligent Systems Excellence</td>
+      </tr>
+      <tr>
+        <th>RESUMEN</th>
+        <td>ELISE es una red de excelencia financiada por el programa H2020 de la Unión Europea, coordinada por el ELLIS
+          Institute (European Laboratory for Learning and Intelligent Systems). Su objetivo es hacer de Europa un
+          referente mundial en inteligencia artificial y machine learning, agrupando a los mejores investigadores
+          europeos para fomentar la colaboración, atraer talento y acelerar la integración de las tecnologías de
+          aprendizaje automático (entre ellas las implementadas con scikit-learn) en la industria y la sociedad. El
+          proyecto ha establecido una red de más de 80 empresas colaboradoras y ha contribuido a la definición de la
+          agenda estratégica de investigación en IA de la Comisión Europea.</td>
+      </tr>
+      <tr>
+        <th>FECHAS</th>
+        <td>Inicio: enero de 2021. Fin previsto: diciembre de 2024 (proyecto H2020 concluido).</td>
+      </tr>
+      <tr>
+        <th>PRESUPUESTO</th>
+        <td>Contribución de la UE: aproximadamente 4.000.000 € (H2020, subvención 951847).</td>
+      <tr>
+        <th>ENTIDADES PARTICIPANTES</th>
+        <td>Red ELLIS con participación de universidades europeas del ranking de Shanghai como ETH Zurich, University of
+          Cambridge, University of Oxford, Technische Universität Berlin y otros centros de investigación punteros
+          europeos en machine learning.</td>
+      </tr>
+      <tr>
+        <th>CÓMO SE HA ENCONTRADO</th>
+        <td>Se ha localizado mediante búsqueda en la base de datos CORDIS de la Comisión Europea con los términos
+          "machine learning excellence Europe H2020" y validando la ficha oficial del proyecto en la plataforma CORDIS.
+        </td>
+      </tr>
+      <tr>
+        <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+        <td>ELISE promueve directamente el avance de las técnicas de machine learning implementadas en herramientas como
+          scikit-learn, que es la librería de referencia en Python para modelos predictivos. Su orientación hacia
+          aplicaciones reales en distintos dominios, incluida la educación y el análisis de datos, conecta con la línea
+          de investigación "Inteligencia artificial para analítica predictiva de datos en el dominio de la educación".
+          Además, las universidades participantes de la red ELLIS aparecen entre las primeras posiciones del ranking de
+          Shanghai, lo que refuerza la relevancia académica de este proyecto para el trabajo.</td>
+      </tr>
+      <tr>
+        <th>URL PROYECTO</th>
+        <td><a href="https://cordis.europa.eu/project/id/951847">https://cordis.europa.eu/project/id/951847</a></td>
+      </tr>
+    </table>
+    </section>
+
+
+    <section id="3">
+      <h2>3. Pycaret)</h2>
+      <h3 id=3.1>3.1 Cursos</h3>
+      <h4>3.1.1 Curso 1</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Gonzalo López Menor</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>Applied Machine Learning in Python</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>
+            Curso impartido por la University of Michigan a través de la plataforma Coursera, centrado en el uso
+            práctico
+            del machine learning en Python. Introduce conceptos clave como clasificación, regresión, evaluación de
+            modelos
+            y validación cruzada, utilizando herramientas del ecosistema Python que permiten desarrollar soluciones de
+            análisis de datos y predicción de forma eficiente.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            Introducción al machine learning; tipos de problemas (clasificación y regresión); evaluación de modelos;
+            validación cruzada; selección de modelos; overfitting y underfitting; métricas de rendimiento; uso de
+            herramientas de machine learning en Python; aplicación práctica sobre datasets reales.
+          </td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>4 semanas (aproximadamente 3-5 horas por semana).</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito en modalidad auditoría (con opción de certificado de pago).</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>
+            Es útil porque proporciona una base sólida de machine learning en Python, sobre la cual herramientas como
+            PyCaret pueden aplicarse para automatizar procesos. Permite entender los fundamentos antes de utilizar
+            soluciones más avanzadas y automatizadas, facilitando el desarrollo de modelos predictivos de forma más
+            rápida.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Búsqueda en Google con los términos “machine learning course university coursera Python” y filtrado por
+            cursos
+            impartidos por universidades incluidas en rankings internacionales como Shanghai.
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a href="https://www.coursera.org/learn/python-machine-learning">
+              https://www.coursera.org/learn/python-machine-learning
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.1.2 Curso 2</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>PyCaret for Machine Learning and Data Science</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Curso práctico centrado en el uso de PyCaret como herramienta de automatización del machine learning en
+            Python.
+            Introduce el desarrollo de modelos predictivos mediante un enfoque de bajo código (low-code), permitiendo
+            construir,
+            comparar y optimizar modelos de forma eficiente. El curso cubre todo el flujo de trabajo de analítica
+            predictiva,
+            desde la preparación de datos hasta la evaluación de modelos, con aplicaciones en distintos dominios,
+            incluyendo la educación.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>Introducción a PyCaret, configuración de entornos de machine learning, preprocesamiento automático de
+            datos,
+            comparación de modelos, optimización y tuning de modelos, evaluación y despliegue de modelos predictivos
+          </td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>44 horas de vídeo bajo demanda</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>8,25 euros</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Este curso es útil porque permite comprender cómo automatizar el desarrollo de modelos de machine learning
+            mediante PyCaret,
+            reduciendo la complejidad del uso directo de librerías como scikit-learn. En el contexto de la analítica
+            predictiva en educación,
+            facilita la creación rápida de modelos para predecir rendimiento académico o detectar patrones en datos
+            educativos sin necesidad
+            de implementar manualmente cada algoritmo.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado mediante búsqueda de cursos online sobre PyCaret y automatización de machine learning,
+            utilizando términos
+            como "PyCaret course", "automated machine learning" y "low-code machine learning".</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td> <a href="https://www.udemy.com/course/python-for-machine-learning-data-science-masterclass/">
+              https://www.udemy.com/course/python-for-machine-learning-data-science-masterclass/
+            </a>
+        </tr>
+      </table>
+      <h4>3.1.3 Curso 3</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Raúl Rodríguez Santos</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>Problem Solving Using Open-Source Languages; R and Python</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>
+            Curso blended organizado dentro de EUGLOH y ofrecido por la University of Novi Sad.
+            Está centrado en el uso de R y Python para resolver problemas reales relacionados
+            con análisis de datos. A lo largo del curso se trabajan conceptos básicos de ambos
+            lenguajes, manipulación de datos, visualización, estadística y una introducción
+            al machine learning. Aunque en la información pública no se menciona PyCaret de forma
+            explícita, sí es uno de los cursos de EUGLOH más relacionados que he encontrado con
+            Python y con tareas que después pueden conectarse bastante bien con esta tecnología.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            Semana 1: introducción a Python, configuración del entorno, sintaxis básica,
+            tipos de datos y análisis simple en Python.<br>
+            Semana 2: introducción a R, entorno de trabajo, sintaxis básica y análisis simple en R.<br>
+            Semana 3: manipulación de datos con dplyr en R y pandas en Python.<br>
+            Semana 4: visualización de datos con ggplot2 en R, matplotlib y seaborn en Python.<br>
+            Semana 5: introducción al análisis estadístico en R.<br>
+            Semana 6: introducción al machine learning, librerías de Python para machine learning
+            y algoritmos supervisados como linear regression, logistic regression,
+            decision trees y random forest.<br>
+            Fase final: proyecto presencial usando R y/o Python.
+          </td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>
+            Hasta 1 mes de duración. En la edición consultada, el curso va del 14 de septiembre
+            al 24 de octubre de 2026, en modalidad blended, con parte online y parte presencial
+            en la University of Novi Sad.
+          </td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>
+            No aparece un precio individual para el estudiante.
+            El curso forma parte de la oferta de EUGLOH.
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>
+            Este curso resulta útil porque trabaja con Python en tareas muy relacionadas con
+            la analítica de datos y con el aprendizaje automático, que es justo el contexto
+            en el que encaja PyCaret. Aunque no está centrado directamente en esa librería,
+            sí ayuda a entender el tipo de flujo de trabajo sobre el que luego se puede aplicar:
+            preparación de datos, visualización, uso de librerías de machine learning
+            y modelos supervisados. Además, para el trabajo tiene valor añadido porque está
+            claramente vinculado a una universidad de la red EUGLOH, en este caso
+            la University of Novi Sad.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha encontrado revisando la página de cursos y actividades de EUGLOH
+            y después consultando el syllabus y el programa detallado del curso.
+            De todas las opciones vistas, ha sido la más relacionada que he encontrado
+            con Python, análisis de datos y machine learning dentro de EUGLOH.
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a
+              href="https://www.eugloh.eu/courses-trainings/activities/problem-solving-using-open-source-languages-r-and-python/">
+              https://www.eugloh.eu/courses-trainings/activities/problem-solving-using-open-source-languages-r-and-python/
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.1.4 Curso 4</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Diego López Nogales</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>EDUC 244: Data Mining and Analytics</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Curso de la University of California, Berkeley, ofrecido por la Berkeley School of Education, centrado en
+            los fundamentos prácticos de la minería de datos y el aprendizaje automático. Tiene un enfoque orientado a
+            proyectos, en el que se trabajan conceptos, algoritmos y aplicaciones de analítica de datos útiles para
+            construir modelos predictivos.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>Fundamentos prácticos de data mining; fundamentos de machine learning; teoría básica para apoyar la
+            intuición; conceptos y algoritmos aplicados en proyectos; trabajo colaborativo sobre problemas analíticos;
+            desarrollo de proyectos semanales de análisis de datos.</td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>Un semestre. En la edición consultada: del 28 de agosto de 2024 al 13 de diciembre de 2024. Carga
+            estimada: 3 horas semanales de docencia y 6 horas semanales de trabajo externo</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>No especificado en la página oficial consultada.</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Este curso resulta útil porque está orientado al análisis de datos y al aprendizaje automático aplicado,
+            lo que encaja directamente con PyCaret. PyCaret es una librería low-code de Python que automatiza flujos de
+            trabajo de machine learning y facilita tareas como el preprocesado, la comparación de modelos y la
+            experimentación rápida. Por ello, este curso proporciona una base adecuada para aplicar PyCaret a problemas
+            de analítica predictiva de datos en el ámbito educativo.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado buscando cursos de universidades del ranking de Shanghái relacionados con machine
+            learning, analítica de datos, educación y Python, usando búsquedas como “UC Berkeley education data mining
+            course”, “Berkeley School of Education machine learning course” y “PyCaret education predictive analytics
+            course”.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a href="https://classes.berkeley.edu/content/2024-fall-educ-244-001-lec-001">
+              https://classes.berkeley.edu/content/2024-fall-educ-244-001-lec-001
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.1.5 Curso 5</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <th>TÍTULO DEL CURSO</th>
+          <td>Machine Learning – Anomaly Detection via PyCaret</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Proyecto guiado disponible en Coursera que introduce el uso de la biblioteca PyCaret para realizar
+            detección de anomalías mediante técnicas de aprendizaje automático. El curso muestra cómo configurar el
+            entorno de trabajo, preparar datos y aplicar algoritmos de detección de anomalías utilizando PyCaret y
+            Python. A través de un laboratorio práctico en el navegador, el estudiante aprende a crear, visualizar y
+            comparar modelos de machine learning con muy pocas líneas de código, lo que permite automatizar gran parte
+            del proceso de análisis de datos.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            1. Introducción a la detección de anomalías en aprendizaje automático.
+            2. Configuración del entorno de trabajo y preparación de datos.
+            3. Introducción a la biblioteca PyCaret y su integración con Python.
+            4. Creación de modelos de detección de anomalías.
+            5. Comparación y visualización de resultados de diferentes algoritmos.
+            6. Interpretación de los resultados obtenidos y análisis del modelo.
+          </td>
+        </tr>
+        <tr>
+          <th>DURACIÓN</th>
+          <td>Aproximadamente 2 horas de aprendizaje práctico mediante un laboratorio interactivo en la nube.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Acceso incluido en la suscripción a Coursera o mediante el periodo de prueba gratuito que ofrece la
+            plataforma.</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Este curso resulta relevante para la línea de investigación porque introduce el uso de PyCaret, una
+            biblioteca que facilita el desarrollo de modelos de aprendizaje automático mediante técnicas de Automated
+            Machine Learning. Gracias a esta herramienta es posible crear, comparar y evaluar diferentes algoritmos de
+            forma rápida y con pocas líneas de código, lo que resulta especialmente útil en proyectos de análisis de
+            datos y predicción en ámbitos como la analítica educativa o la detección de comportamientos anómalos en
+            conjuntos de datos.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha localizado mediante una búsqueda en la plataforma Coursera utilizando términos relacionados con la
+            tecnología analizada, como “PyCaret”, “machine learning” y “AutoML”. También se ha utilizado el buscador web
+            para localizar cursos disponibles en Coursera que enseñen el uso práctico de la biblioteca PyCaret.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td><a
+              href="https://www.coursera.org/learn/anomaly-detection">https://www.coursera.org/learn/anomaly-detection</a>
+          </td>
+        </tr>
+      </table>
+
+      <h3 id=3.2>3.2 Documentos (Artículos, libros, foros, blogs)</h3>
+      <h4>3.2.1 Documento 1</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Gonzalo López Menor</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>PyCaret Official Documentation</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>
+            Documentación oficial de PyCaret que recoge de forma estructurada todas las funcionalidades de la librería.
+            Incluye guías prácticas para la creación de modelos de machine learning, automatización de procesos,
+            comparación de algoritmos y despliegue de modelos, facilitando el uso de técnicas avanzadas de inteligencia
+            artificial de forma sencilla y eficiente.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            Introducción a PyCaret; instalación y configuración; clasificación; regresión; clustering;
+            detección de anomalías; procesamiento de datos; comparación de modelos; ajuste de hiperparámetros;
+            evaluación de modelos; despliegue; ejemplos prácticos.
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>
+            Es útil porque proporciona una guía completa y actualizada sobre el uso de PyCaret, permitiendo entender
+            tanto su funcionamiento como su aplicación práctica en proyectos reales. Además, al ser documentación
+            oficial, garantiza fiabilidad y facilita la implementación correcta de la tecnología en la línea de
+            investigación.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha localizado mediante búsqueda en Google con los términos “PyCaret documentation” y se ha verificado
+            en la página oficial del proyecto.
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a href="https://pycaret.readthedocs.io/">https://pycaret.readthedocs.io/</a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.2.2 Documento 2</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</td>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>PyCaret: An open source, low-code machine learning library in Python</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Artículo académico que presenta PyCaret como una biblioteca de machine learning de bajo código en Python,
+            diseñada para simplificar y automatizar el desarrollo de modelos predictivos. El documento describe cómo
+            PyCaret
+            permite realizar tareas de clasificación, regresión, clustering y procesamiento de datos mediante una
+            interfaz
+            unificada que reduce significativamente la complejidad del flujo de trabajo tradicional en machine learning.
+            Se destaca su integración con bibliotecas como scikit-learn y su utilidad en entornos de analítica de datos.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>Introducción a PyCaret, automatización del machine learning (AutoML), arquitectura y diseño de la
+            librería,
+            comparación de modelos, optimización automática, integración con scikit-learn, casos de uso en analítica de
+            datos</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Es útil porque permite comprender cómo automatizar el proceso de desarrollo de modelos predictivos,
+            reduciendo la complejidad técnica respecto a herramientas como scikit-learn. En el contexto de la analítica
+            predictiva en educación, facilita la creación rápida de modelos capaces de analizar el rendimiento
+            académico,
+            detectar patrones en datos de estudiantes y apoyar la toma de decisiones basada en datos.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado mediante búsqueda en repositorios científicos como arXiv utilizando términos como
+            "PyCaret", "AutoML" y "low-code machine learning", seleccionando documentos académicos relevantes sobre
+            automatización del aprendizaje automático.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td> <a href="https://arxiv.org/abs/2009.04759">
+              https://arxiv.org/abs/2009.04759
+            </a>
+        </tr>
+      </table>
+      <h4>3.2.3 Documento 3</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Raúl Rodríguez Santos</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>Prediction of Student Success: A Smart Data-Driven Approach</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>
+            Este documento es una tesis de máster centrada en la predicción del éxito académico
+            de estudiantes universitarios a partir de técnicas de Educational Data Mining.
+            El estudio trabaja con datos de estudiantes de máster del ISCTE entre 2012 y 2022
+            y utiliza PyCaret para comparar varios algoritmos de clasificación.
+            El objetivo principal es identificar qué factores influyen más en el éxito de los alumnos
+            y construir una metodología que sirva de apoyo a la toma de decisiones en educación superior.
+            Además, el trabajo no solo compara modelos, sino que también analiza qué variables
+            tienen más peso en la predicción.
+          </td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            Introducción.<br>
+            Chapter 1: Literature Review.<br>
+            Chapter 2: Methodology
+            (Business Understanding, Data Understanding and Data Preparation, Modelling and Evaluation).<br>
+            Chapter 3: Results and Discussion
+            (Input Models, Tune Models with hyperparameters selection, Knowledge Extraction).<br>
+            Conclusions and Future Work.<br>
+            References.<br>
+            Appendixes.
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>
+            Este documento resulta muy útil para el trabajo porque conecta de forma directa
+            PyCaret con la analítica predictiva en educación, que es justo la línea que estamos trabajando.
+            No se queda en explicar la herramienta de forma teórica, sino que muestra una aplicación real
+            sobre datos académicos, comparando modelos y analizando qué factores influyen más
+            en el éxito de los estudiantes.
+            Además, sirve para justificar bastante bien que PyCaret puede utilizarse
+            en problemas educativos reales, como la predicción del rendimiento
+            o la detección de perfiles con más riesgo de fracaso.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha encontrado buscando documentos académicos que relacionaran PyCaret
+            con predicción del rendimiento y éxito estudiantil en educación superior.
+            Después se revisó el texto completo para comprobar que PyCaret aparecía
+            de forma explícita en la metodología y que realmente se utilizaba
+            para comparar modelos de clasificación sobre datos educativos.
+          </td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a href="https://core.ac.uk/download/554500800.pdf">
+              https://core.ac.uk/download/554500800.pdf
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.2.4 Documento 4</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</td>
+          <td>Diego López Nogales</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>Analysis on Early Dropouts in Engineering Careers</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Documento académico centrado en el análisis del abandono temprano en estudios universitarios de
+            ingeniería. El trabajo estudia los grados de Computer Engineering y Bachelor of Systems Analysis de la
+            Universidad de Buenos Aires y plantea un enfoque de ciencia de datos para detectar patrones asociados al
+            abandono. Para ello utiliza análisis exploratorio de datos y modelos de aprendizaje automático con PyCaret,
+            aplicados a clustering, detección de anomalías y clasificación.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>1. Introduction; 2. State of the art; 3. Analysis; 4. Conclusions; 5. Future work; 6. Acknowledgments;
+            References</td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Este documento resulta útil porque conecta directamente la tecnología PyCaret con la línea de
+            investigación de inteligencia artificial para analítica predictiva de datos en educación. Su utilidad está
+            en que muestra una aplicación real de PyCaret para detectar estudiantes en riesgo de abandono mediante
+            técnicas de clustering, detección de anomalías y clasificación, lo que puede trasladarse fácilmente a
+            contextos de analítica predictiva educativa.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado buscando documentos académicos que relacionaran PyCaret con predicción educativa y
+            abandono académico, usando búsquedas como “PyCaret education predictive analytics”, “PyCaret student
+            dropout” y “PyCaret academic performance document”.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td>
+            <a href="https://ceur-ws.org/Vol-3282/icaiw_waai_1.pdf">
+              https://ceur-ws.org/Vol-3282/icaiw_waai_1.pdf
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.2.5 Documento 5</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</td>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <th>TÍTULO</th>
+          <td>Easing the Prediction of Student Dropout for Everyone: Integrating AutoML and Explainable Artificial
+            Intelligence</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Trabajo de investigación presentado en la conferencia EDM 2024 (Educational Data Mining) que propone un
+            sistema para facilitar la predicción de abandono universitario combinando AutoML con técnicas de
+            Inteligencia Artificial Explicable (XAI). El sistema utiliza herramientas de AutoML para seleccionar
+            automáticamente el mejor modelo predictivo —un proceso en el que PyCaret puede integrarse directamente— y
+            genera de forma automática dos paneles XAI interactivos basados en la librería SHAP para explicar las
+            predicciones a educadores sin conocimientos técnicos. El objetivo es democratizar el uso de machine learning
+            en entornos educativos reales.</td>
+        </tr>
+        <tr>
+          <th>ÍNDICE DE CONTENIDOS</th>
+          <td>
+            1. Introducción y motivación.
+            2. Metodología: pipeline AutoML + XAI.
+            3. Generación automática de dashboards explicativos (explainerdashboard, DICE).
+            4. Evaluación del sistema con datos educativos reales.
+            5. Conclusiones y trabajo futuro.
+          </td>
+        </tr>
+        <tr>
+          <th>POR QUÉ ES ÚTIL</th>
+          <td>Este documento es relevante para el trabajo porque ilustra cómo la automatización del machine learning
+            (AutoML), concepto central de PyCaret, puede aplicarse directamente a la predicción del abandono estudiantil
+            en el dominio educativo. Además, aborda la explicabilidad de los modelos, un aspecto clave para que los
+            profesionales de la educación puedan confiar en los resultados y actuar en consecuencia. La combinación
+            AutoML + XAI es una de las tendencias más actuales en analítica predictiva educativa, lo que conecta
+            directamente con la línea de investigación del grupo.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado buscando en los proceedings de la conferencia EDM 2024 (Educational Data Mining) con los
+            términos "AutoML dropout prediction education explainable", identificando este trabajo como uno de los que
+            combinan más directamente AutoML con el dominio educativo y la explicabilidad.</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td><a
+              href="https://educationaldatamining.org/edm2024/proceedings/2024.EDM-posters.98/index.html">https://educationaldatamining.org/edm2024/proceedings/2024.EDM-posters.98/index.html</a>
+          </td>
+        </tr>
+      </table>
+
+      <h3 id=3.3>3.3 Software (herramientas, editores, etc. para desarrollar con la tecnología)</h3>
+      <h4>3.3.1 Software 1</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Gonzalo López Menor</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>Google Colab</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>
+            Plataforma en la nube que permite ejecutar código Python desde el navegador sin necesidad de instalación.
+            Es especialmente útil para trabajar con PyCaret, ya que permite cargar datasets, entrenar modelos de machine
+            learning y visualizar resultados de forma rápida, facilitando el desarrollo de proyectos de inteligencia
+            artificial sin necesidad de configurar un entorno local.
+          </td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito (con opciones de pago para mayor capacidad de uso).</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>Freeware (servicio propietario de Google).</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha localizado mediante búsqueda web con los términos “online Python notebook machine learning” y
+            “tools for PyCaret development”, verificando su uso en la documentación oficial de Google Colab.
+          </td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td>
+            <a href="https://colab.research.google.com/">https://colab.research.google.com/</a>
+          </td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td>
+            <a href="https://colab.research.google.com/notebooks/intro.ipynb">
+              https://colab.research.google.com/notebooks/intro.ipynb
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.3.2 Software 2</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>MLflow</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>Plataforma de código abierto utilizada para gestionar el ciclo de vida de modelos de machine learning,
+            incluyendo seguimiento de experimentos, registro de modelos y despliegue. Se integra con PyCaret para
+            almacenar resultados de modelos, comparar ejecuciones y facilitar la implementación de sistemas de
+            analítica predictiva en entornos reales, como aplicaciones educativas.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gatuito (versión open source)</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>Apache License 2.0</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado mediante búsqueda de herramientas compatibles con PyCaret para la gestión de modelos
+            de machine learning, utilizando términos como "PyCaret integration", "ML lifecycle" y "experiment tracking".
+          </td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td> <a href="https://mlflow.org/">
+              https://mlflow.org/
+            </a>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td> <a href="https://mlflow.org/docs/latest/index.html">
+              https://mlflow.org/docs/latest/index.html
+            </a>
+        </tr>
+      </table>
+      <h4>3.3.3 Software 3</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Raúl Rodríguez Santos</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>Docker</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>
+            Docker sirve para trabajar con aplicaciones dentro de contenedores,
+            es decir, en entornos aislados y controlados. En relación con PyCaret,
+            resulta útil porque permite tener una instalación separada del resto
+            del sistema y ejecutar proyectos de machine learning de forma más ordenada
+            y reproducible. Además, la documentación oficial de PyCaret indica que sus
+            imágenes Docker ya vienen preparadas para trabajar con la librería.
+          </td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>
+            Docker ofrece varios planes. En la página oficial
+            de precios aparecía Docker Personal por 0 $, Docker Pro por 11 $ al mes
+            por usuario, Docker Team por 16 $ al mes por usuario y Docker Business
+            por 24 $ al mes por usuario. Para un uso individual básico, Docker Personal
+            aparece como la opción gratuita.
+          </td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>
+            El uso de Docker depende del plan contratado. La página oficial distingue
+            entre Docker Personal, Pro, Team y Business, y cada uno incluye condiciones
+            distintas de uso, como número de usuarios, repositorios disponibles
+            y límites de consumo. Por eso, las funciones y capacidades de Docker
+            cambian según la modalidad elegida.
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Se ha encontrado revisando la documentación oficial de PyCaret para buscar
+            herramientas adecuadas para instalar y ejecutar la librería.
+            Allí aparece Docker como una de las opciones recomendadas para trabajar
+            con PyCaret en un entorno separado.
+          </td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td>
+            <a href="https://www.docker.com/">
+              https://www.docker.com/
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td>
+            <a href="https://pycaret.gitbook.io/docs/get-started/installation">
+              https://pycaret.gitbook.io/docs/get-started/installation
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.3.4 Software 4</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Diego López Nogales</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>Streamlit</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>Sirve para crear aplicaciones web interactivas en Python de forma sencilla. En relación con PyCaret,
+            permite construir interfaces para mostrar modelos predictivos, cargar datos, generar predicciones y
+            visualizar resultados, por lo que resulta útil en proyectos de analítica predictiva educativa.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>Open source. Licencia Apache 2.0.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado buscando herramientas relacionadas con PyCaret para desarrollar y desplegar aplicaciones
+            de machine learning, usando búsquedas como “PyCaret Streamlit”, “build deploy ML app with PyCaret and
+            Streamlit” y “Streamlit Python data apps”.</td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td>
+            <a href="https://streamlit.io/">
+              https://streamlit.io/
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td>
+            <a
+              href="https://pycaret.gitbook.io/docs/learn-pycaret/official-blog/build-and-deploy-ml-app-with-pycaret-and-streamlit">
+              https://pycaret.gitbook.io/docs/learn-pycaret/official-blog/build-and-deploy-ml-app-with-pycaret-and-streamlit
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.3.5 Software 5</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <th>NOMBRE</th>
+          <td>Kaggle Notebooks</td>
+        </tr>
+        <tr>
+          <th>PARA QUÉ SIRVE</th>
+          <td>Kaggle es una plataforma de ciencia de datos que ofrece un entorno de notebooks en la nube (Kaggle
+            Notebooks) gratuito, con acceso a GPU y TPU y con PyCaret preinstalado. Permite desarrollar, ejecutar y
+            compartir proyectos completos de machine learning sin necesidad de configurar ningún entorno local. Además,
+            proporciona acceso a datasets públicos de rendimiento académico (como el UCI Student Performance Dataset)
+            sobre los que se puede aplicar PyCaret directamente para construir y comparar modelos predictivos en el
+            ámbito educativo.</td>
+        </tr>
+        <tr>
+          <th>PRECIO</th>
+          <td>Gratuito.</td>
+        </tr>
+        <tr>
+          <th>LICENCIA DE USO</th>
+          <td>Plataforma propietaria de Google (Kaggle). Los notebooks son de uso gratuito; el código escrito por el
+            usuario puede publicarse bajo la licencia que elija el autor.</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha identificado como entorno habitual de desarrollo con PyCaret buscando "PyCaret Kaggle notebook
+            education dataset" y comprobando que la plataforma incluye PyCaret en su entorno estándar y dispone de
+            datasets educativos directamente accesibles.</td>
+        </tr>
+        <tr>
+          <th>URL SOFTWARE</th>
+          <td><a href="https://www.kaggle.com/code">https://www.kaggle.com/code</a></td>
+        </tr>
+        <tr>
+          <th>URL GUÍA DE USO</th>
+          <td><a href="https://www.kaggle.com/docs/notebooks">https://www.kaggle.com/docs/notebooks</a></td>
+        </tr>
+      </table>
+      <h4>3.4.1 Proyecto de I+D 1</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Gonzalo López Menor</td>
+        </tr>
+        <tr>
+          <th>TITULO</th>
+          <td>Machine Learning Group – University of Cambridge</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>
+            Grupo de investigación de la Universidad de Cambridge centrado en el desarrollo de técnicas avanzadas de
+            machine learning y su aplicación en distintos ámbitos como ciencia de datos, inteligencia artificial y
+            análisis predictivo. El grupo trabaja en modelos de aprendizaje automático, optimización y procesamiento
+            de grandes volúmenes de datos.
+          </td>
+        </tr>
+        <tr>
+          <th>FECHAS</th>
+          <td>Activo en la actualidad</td>
+        </tr>
+        <tr>
+          <th>PRESUPUESTO</th>
+          <td>No especificado públicamente</td>
+        </tr>
+        <tr>
+          <th>ENTIDADES PARTICIPANTES</th>
+          <td>
+            University of Cambridge y colaboradores académicos e industriales
+          </td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>
+            Búsqueda en Google con los términos “Cambridge machine learning group” y verificación en la web oficial del
+            grupo.
+          </td>
+        </tr>
+        <tr>
+          <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+          <td>
+            Los proyectos desarrollados en este grupo aplican técnicas de machine learning que pueden implementarse
+            mediante
+            herramientas como PyCaret, facilitando la automatización del entrenamiento, evaluación y comparación de
+            modelos
+            dentro de la línea de investigación seleccionada.
+          </td>
+        </tr>
+        <tr>
+          <th>URL PROYECTO</th>
+          <td>
+            <a href="https://mlg.eng.cam.ac.uk/">
+              https://mlg.eng.cam.ac.uk/
+            </a>
+          </td>
+        </tr>
+      </table>
+      <h4>3.4.2 Proyecto de I+D 2</h4>
+      <table>
+        <tr>
+          <th>ANALISTA</th>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <th>TITULO</th>
+          <td>AutoML4EDU – Automated Machine Learning for Education</td>
+        </tr>
+        <tr>
+          <th>RESUMEN</th>
+          <td>Proyecto de investigación centrado en la aplicación de técnicas de Automated Machine Learning (AutoML)
+            en el ámbito educativo. Su objetivo es facilitar el desarrollo de modelos predictivos sin necesidad de
+            conocimientos avanzados en machine learning, permitiendo analizar datos académicos, predecir el rendimiento
+            de los estudiantes y detectar patrones de aprendizaje. El proyecto explora herramientas de automatización
+            como PyCaret para simplificar el proceso de creación y optimización de modelos</td>
+        </tr>
+        <tr>
+          <th>FECHAS</th>
+          <td>No especificadas</td>
+        </tr>
+        <tr>
+          <th>PRESUPUESTO</th>
+          <td>No especificado</td>
+        <tr>
+          <th>ENTIDADES PARTICIPANTES</th>
+          <td>Universidades europeas, centros de investigación en inteligencia artificial y organizaciones
+            especializadas en innovación educativa y analítica de datos</td>
+        </tr>
+        <tr>
+          <th>CÓMO SE HA ENCONTRADO</th>
+          <td>Se ha encontrado mediante búsqueda de proyectos europeos relacionados con AutoML y educación,
+            utilizando términos como "AutoML education", "learning analytics" y "AI in education projects"</td>
+        </tr>
+        <tr>
+          <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+          <td>El proyecto está directamente relacionado con PyCaret, ya que se centra en la automatización del
+            machine learning (AutoML), concepto clave de esta herramienta. Permite aplicar analítica predictiva
+            en educación de forma eficiente, reduciendo la complejidad técnica del uso directo de librerías como
+            scikit-learn. Esto facilita el desarrollo de modelos para predicción del rendimiento académico y
+            análisis de datos educativos</td>
+        </tr>
+        <tr>
+          <th>URL PROYECTO</th>
+          <td> <a href="https://cordis.europa.eu/">
+              https://cordis.europa.eu/
+            </a>
+        </tr>
+      </table>
+      <<h4>3.4.3 Proyecto de I+D 3</h4>
+        <table>
+          <tr>
+            <th>ANALISTA</th>
+            <td>Raúl Rodríguez Santos</td>
+          </tr>
+          <tr>
+            <th>TITULO</th>
+            <td>i-MASTER – Integrating Adaptive Learning in Maritime Simulator-Based Education and Training with
+              Intelligent Learning System</td>
+          </tr>
+          <tr>
+            <th>RESUMEN</th>
+            <td>
+              i-MASTER es un proyecto europeo de I+D centrado en integrar tecnologías emergentes
+              en educación y formación marítima para desarrollar un sistema inteligente de aprendizaje.
+              Su idea principal es incorporar learning analytics y funciones de aprendizaje adaptativo
+              para mejorar tanto la formación presencial como la remota en simuladores.
+              En conjunto, el proyecto busca hacer más accesible y más eficaz el proceso de enseñanza,
+              además de mejorar la calidad del entrenamiento y la preparación del alumnado.
+            </td>
+          </tr>
+          <tr>
+            <th>FECHAS</th>
+            <td>
+              Inicio: 1 de septiembre de 2022.<br>
+              Fin: 31 de agosto de 2026.
+            </td>
+          </tr>
+          <tr>
+            <th>PRESUPUESTO</th>
+            <td>
+              Coste total del proyecto: 3.286.600 €.
+            </td>
+          </tr>
+          <tr>
+            <th>ENTIDADES PARTICIPANTES</th>
+            <td>
+              UiT – The Arctic University of Norway (coordinador), University of Gothenburg,
+              Fraunhofer, AB Yrkeshogskolan vid Abo Akademi, VTI,
+              WU Vienna, University of South-Eastern Norway y TERP AS.
+            </td>
+          </tr>
+          <tr>
+            <th>CÓMO SE HA ENCONTRADO</th>
+            <td>
+              Se ha encontrado buscando proyectos europeos relacionados con learning analytics,
+              adaptive learning y educación. Después se ha revisado la ficha oficial en CORDIS
+              para comprobar que incluía fechas, presupuesto, participantes y una relación clara
+              con analítica del aprendizaje. Además, se verificó que la universidad coordinadora,
+              UiT, forma parte de la red EUGLOH.
+            </td>
+          </tr>
+          <tr>
+            <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+            <td>
+              Este proyecto se relaciona bastante bien con la línea de investigación del grupo
+              porque trabaja con inteligencia artificial, analítica de datos y aprendizaje adaptativo
+              en un contexto educativo. Su relación con PyCaret está en que este tipo de proyecto
+              necesita comparar modelos, automatizar parte del flujo de trabajo y analizar datos
+              de aprendizaje para apoyar la toma de decisiones, que son tareas en las que PyCaret
+              puede ser una herramienta útil. Aun así, la ficha oficial del proyecto no menciona
+              de forma explícita esta librería, por lo que la relación debe entenderse como
+              metodológica y compatible, no como una tecnología confirmada dentro del proyecto.
+            </td>
+          </tr>
+          <tr>
+            <th>URL PROYECTO</th>
+            <td>
+              <a href="https://cordis.europa.eu/project/id/101060107">
+                https://cordis.europa.eu/project/id/101060107
+              </a>
+            </td>
+          </tr>
+        </table>
+        <h4>3.4.4 Proyecto de I+D 4</h4>
+        <table>
+          <tr>
+            <th>ANALISTA</th>
+            <td>Diego López Nogales</td>
+          </tr>
+          <tr>
+            <th>TITULO</th>
+            <td>Converting zombies into learners</td>
+          </tr>
+          <tr>
+            <th>RESUMEN</th>
+            <td>Proyecto del MIT Omnichannel Education Lab orientado a aumentar el compromiso del alumnado en educación
+              online masiva y abierta mediante learning analytics. El proyecto estudia cómo predecir qué estudiantes
+              verificados abandonarán el curso analizando su actividad y rendimiento en MOOCs. Para ello desarrolla un
+              modelo predictivo con algoritmos de machine learning, utilizando datos de click-stream como indicador de
+              actividad del alumnado y aplicando modelos como regresión logística y random forests.</td>
+          </tr>
+          <tr>
+            <th>FECHAS</th>
+            <td>No se indican fechas exactas del proyecto en la página consultada. Sí aparecen publicaciones asociadas
+              en
+              2019 relacionadas con sus resultados.</td>
+          </tr>
+          <tr>
+            <th>PRESUPUESTO</th>
+            <td>No especificado en la información pública consultada.</td>
+          <tr>
+            <th>ENTIDADES PARTICIPANTES</th>
+            <td>MIT Omnichannel Education Lab; MIT Center for Transportation & Logistics; equipo de investigación
+              formado
+              por Chris Caplice, Eva Ponce, Inma Borrella, Sergio Caballero y Connor Makowski.</td>
+          </tr>
+          <tr>
+            <th>CÓMO SE HA ENCONTRADO</th>
+            <td>Se ha encontrado buscando proyectos de universidades del ranking de Shanghái relacionados con
+              inteligencia
+              artificial, learning analytics, predicción de abandono en educación online y tecnologías compatibles con
+              PyCaret, mediante búsquedas como “MIT education dropout prediction machine learning project”, “MIT
+              learning
+              analytics MOOC dropout” y “PyCaret educational predictive analytics project”.</td>
+          </tr>
+          <tr>
+            <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+            <td>Este proyecto está directamente relacionado con la línea de investigación “Inteligencia artificial para
+              analítica predictiva de datos en el dominio de la educación” porque aplica machine learning para predecir
+              el
+              abandono de estudiantes en MOOCs a partir de datos educativos reales. También se relaciona muy bien con
+              PyCaret, ya que este tipo de problema puede resolverse con su módulo de clasificación sobre datos
+              tabulares,
+              comparando automáticamente modelos como regresión logística y random forest y evaluando su rendimiento de
+              forma rápida. No obstante, la fuente pública no confirma expresamente que el proyecto use PyCaret.</td>
+          </tr>
+          <tr>
+            <th>URL PROYECTO</th>
+            <td>
+              <a href="https://omniedulab.mit.edu/converting-zombies-into-learners/">
+                https://omniedulab.mit.edu/converting-zombies-into-learners/
+              </a>
+            </td>
+          </tr>
+        </table>
+        <h4>3.4.5 Proyecto de I+D 5</h4>
+        <table>
+          <tr>
+            <th>ANALISTA</th>
+            <td>Marcos Corrochano Arroyo</td>
+          </tr>
+          <tr>
+            <th>TITULO</th>
+            <td>AutoLearn-SI – Leveraging Benchmarking Data for Automated Machine Learning and Optimization</td>
+          </tr>
+          <tr>
+            <th>RESUMEN</th>
+            <td>Proyecto de investigación financiado por el programa Horizon Europe (ERA Chair), cuyo objetivo es crear
+              un grupo de investigación líder en AutoML y optimización automática en el Jožef Stefan Institute (JSI) de
+              Eslovenia. El proyecto trabaja en el desarrollo y evaluación de marcos de AutoML a partir de datos de
+              benchmarking, fomentando la excelencia investigadora en Europa en este campo. Las herramientas AutoML como
+              PyCaret, que automatizan la selección y ajuste de modelos de machine learning, son centrales en el tipo de
+              investigación que impulsa este proyecto.</td>
+          </tr>
+          <tr>
+            <th>FECHAS</th>
+            <td>Fecha de firma del acuerdo de subvención: noviembre de 2024. Proyecto activo bajo Horizon Europe.</td>
+          </tr>
+          <tr>
+            <th>PRESUPUESTO</th>
+            <td>Financiado por Horizon Europe (HORIZON-WIDERA-2023-TALENTS-01-01). Importe pendiente de publicación.
+            </td>
+          <tr>
+            <th>ENTIDADES PARTICIPANTES</th>
+            <td>Jožef Stefan Institute (JSI), Ljubljana, Eslovenia (coordinador). Proyecto dentro del ecosistema
+              HORIZON-WIDERA que fomenta el desarrollo de capacidades investigadoras en IA en Europa.</td>
+          </tr>
+          <tr>
+            <th>CÓMO SE HA ENCONTRADO</th>
+            <td>Se ha localizado en la base de datos CORDIS de la Comisión Europea buscando proyectos financiados por
+              Horizon Europe relacionados con AutoML, utilizando los términos "AutoML Horizon Europe research" y
+              filtrando proyectos activos con relación explícita a la automatización del machine learning.</td>
+          </tr>
+          <tr>
+            <th>RELACION CON LA TECNOLOGÍA Y LA LINEA DE INVESTIGACIÓN</th>
+            <td>AutoLearn-SI está directamente centrado en AutoML, que es precisamente el paradigma que implementa
+              PyCaret: automatización de la selección, entrenamiento y optimización de modelos de machine learning con
+              pocas líneas de código. En el contexto de nuestra línea de investigación (analítica predictiva en
+              educación) PyCaret permite aplicar los avances de AutoML investigados en este proyecto para construir de
+              forma rápida y reproducible modelos predictivos sobre datos académicos. La relación es tecnológica y
+              metodológica: el proyecto investiga los fundamentos que hacen posible herramientas como PyCaret.</td>
+          </tr>
+          <tr>
+            <th>URL PROYECTO</th>
+            <td><a
+                href="https://cordis.europa.eu/project/id/101187010">https://cordis.europa.eu/project/id/101187010</a>
+            </td>
+          </tr>
+        </table>
+    </section>
+
+    <section id="4">
+      <h2>4. Conclusiones</h2>
+      <p>
+        A lo largo de este trabajo hemos podido comprobar que la inteligencia artificial aplicada a la analítica
+        predictiva
+        de datos en el dominio de la educación es una línea de investigación actual, útil y con muchas posibilidades de
+        desarrollo. La búsqueda y análisis de recursos nos ha permitido ver que no solo existe una base teórica amplia,
+        sino también herramientas accesibles que facilitan la creación de modelos predictivos capaces de apoyar la toma
+        de decisiones en contextos educativos.
+      </p>
+      <p>
+        En concreto, la comparación entre <strong>scikit-learn</strong> y <strong>PyCaret</strong> nos ha resultado
+        interesante porque
+        representan dos formas diferentes de abordar el aprendizaje automático. Por un lado, scikit-learn ofrece un
+        entorno
+        más flexible y detallado, adecuado para comprender mejor cómo se construyen y evalúan los modelos. Por otro,
+        PyCaret simplifica gran parte del proceso y permite trabajar de forma más rápida, lo que resulta útil cuando se
+        busca agilidad en la experimentación. Esta diferencia nos ha ayudado a entender que la elección de una
+        tecnología
+        no depende solo de su potencia, sino también del contexto, del tiempo disponible y del nivel de profundidad que
+        se quiera alcanzar.
+      </p>
+      <p>
+        Uno de los principales problemas encontrados ha sido la localización de recursos que, además de ser relevantes
+        para las tecnologías estudiadas, cumplieran también con los requisitos del enunciado, especialmente en relación
+        con universidades del ranking de Shanghai y de la red EUGLOH. Esto nos ha obligado a revisar con cuidado los
+        enlaces, la procedencia de las fuentes y la relación real entre cada recurso y la línea de investigación
+        definida.
+        Aun así, este proceso también ha servido para mejorar la calidad del trabajo y seleccionar materiales más
+        fiables
+        y mejor fundamentados.
+        Además, se ha procurado cumplir el requisito de vincular los recursos seleccionados con universidades del
+        ranking de Shanghai y de la red EUGLOH. Entre los recursos asociados a Shanghai destacan, por ejemplo, HarvardX,
+        Stanford, Oxford, Cambridge y University of California, Berkeley, mientras que entre los vinculados a EUGLOH se
+        han seleccionado cursos y proyectos relacionados con University of Novi Sad, University of Galway y otras
+        actividades de la red EUGLOH. Esto refuerza la relevancia académica de las fuentes elegidas.
+      </p>
+      <p>
+        En conjunto, consideramos que el trabajo ha sido útil no solo para conocer mejor ambas tecnologías, sino también
+        para aprender a seleccionar información de forma crítica, organizar tareas en grupo y relacionar herramientas de
+        inteligencia artificial con aplicaciones reales en el ámbito educativo. Como conclusión general, creemos que
+        tanto
+        scikit-learn como PyCaret son tecnologías válidas para esta línea de investigación, aunque cada una aporta
+        ventajas
+        distintas: scikit-learn destaca por su solidez y control sobre el proceso, mientras que PyCaret sobresale por su
+        rapidez y facilidad de uso.
+      </p>
+    </section>
+    <section id="5">
+      <h2>5. Aspectos complementarios</h2>
+
+      <h3>5.1. Fundamentación de la línea de investigación</h3>
+      <p>
+        El grupo ha seleccionado una línea de investigación centrada en Recursos sobre dos tecnologías emergentes para
+        Inteligencia artificial para analítica predictiva de datos
+        en el dominio de la educación, considerando que se trata de un área actual, transversal y con alto impacto en
+        distintos sectores.
+        Esta elección permite relacionar recursos formativos, documentación técnica, herramientas de desarrollo y
+        proyectos de I+D de manera coherente, facilitando una visión global del ecosistema tecnológico analizado.
+      </p>
+      <p>
+        La selección de las tecnologías <strong>scikit-learn</strong> y <strong>PyCaret</strong> responde a su
+        complementariedad.
+        Scikit-learn representa una biblioteca de referencia en Python para aprendizaje automático, muy consolidada
+        académica y profesionalmente, mientras que PyCaret aporta una capa de automatización que simplifica tareas
+        habituales como la preparación de datos, comparación de modelos y evaluación. De esta forma, ambas tecnologías
+        permiten estudiar dos enfoques diferentes dentro del mismo ámbito: uno más clásico y modular, y otro más
+        orientado a la productividad y rapidez de desarrollo.
+      </p>
+
+      <h3>5.2. Evaluación comparativa de la relevancia de los recursos seleccionados</h3>
+      <p>
+        Para valorar la utilidad de los recursos analizados, el grupo ha definido cuatro criterios comunes:
+        relación con la línea de investigación, aplicabilidad práctica, fiabilidad de la fuente y facilidad de
+        aprendizaje.
+        Cada recurso se ha valorado cualitativamente según estos criterios, con el objetivo de identificar cuáles son
+        más relevantes para iniciarse y profundizar en las tecnologías estudiadas.
+      </p>
+
+      <table>
+        <tr>
+          <th>Tipo de recurso</th>
+          <th>Tecnología</th>
+          <th>Relevancia</th>
+          <th>Justificación</th>
+        </tr>
+        <tr>
+          <td>Curso</td>
+          <td>scikit-learn</td>
+          <td>Alta</td>
+          <td>Permite adquirir una base sólida de machine learning en Python y comprender el uso estructurado de la
+            biblioteca.</td>
+        </tr>
+        <tr>
+          <td>Documento</td>
+          <td>scikit-learn</td>
+          <td>Alta</td>
+          <td>La documentación oficial es una fuente primaria y fiable para comprender módulos, algoritmos y ejemplos de
+            uso.</td>
+        </tr>
+        <tr>
+          <td>Software</td>
+          <td>scikit-learn</td>
+          <td>Media-Alta</td>
+          <td>Las herramientas de desarrollo facilitan la implementación y experimentación, aunque su valor depende del
+            nivel técnico del usuario.</td>
+        </tr>
+        <tr>
+          <td>Proyecto de I+D</td>
+          <td>scikit-learn</td>
+          <td>Alta</td>
+          <td>Permite conectar la tecnología con investigación universitaria real y aplicaciones en contextos avanzados.
+          </td>
+        </tr>
+        <tr>
+          <td>Curso</td>
+          <td>PyCaret</td>
+          <td>Media-Alta</td>
+          <td>Ayuda a comprender la automatización de procesos de machine learning y su utilidad en prototipado rápido.
+          </td>
+        </tr>
+        <tr>
+          <td>Documento</td>
+          <td>PyCaret</td>
+          <td>Alta</td>
+          <td>La documentación oficial resume de forma clara las funcionalidades de la tecnología y sus principales
+            módulos.</td>
+        </tr>
+        <tr>
+          <td>Software</td>
+          <td>PyCaret</td>
+          <td>Media-Alta</td>
+          <td>El entorno elegido aporta rapidez de uso y facilita pruebas y experimentos sin configuraciones complejas.
+          </td>
+        </tr>
+        <tr>
+          <td>Proyecto de I+D</td>
+          <td>PyCaret</td>
+          <td>Media</td>
+          <td>La relación con proyectos de investigación se establece sobre todo por su utilidad como herramienta de
+            apoyo al desarrollo de modelos.</td>
+        </tr>
+      </table>
+
+      <p>
+        A partir de esta comparativa, el grupo considera que los recursos más importantes para la línea de investigación
+        son la documentación oficial, los cursos introductorios bien estructurados y los proyectos de I+D vinculados
+        a universidades y entornos de investigación reconocidos. Estos elementos no solo permiten aprender a utilizar
+        las tecnologías, sino también comprender su contexto de aplicación y su relevancia académica y profesional.
+      </p>
+
+      <h3>5.3. Roles complementarios y organización del trabajo</h3>
+      <p>
+        Además del rol de coordinador o Product Owner, el grupo ha definido varios roles complementarios para mejorar
+        la organización y la calidad del trabajo.
+      </p>
+
+      <table>
+        <tr>
+          <th>Rol</th>
+          <th>Responsabilidades</th>
+          <th>Responsable</th>
+        </tr>
+        <tr>
+          <td>Coordinador del grupo</td>
+          <td>Gestión general del trabajo, supervisión del repositorio, revisión de aportaciones y coordinación de la
+            entrega final.</td>
+          <td>Gonzalo López Menor</td>
+        </tr>
+        <tr>
+          <td>Coordinador de cursos</td>
+          <td>Revisar que los cursos seleccionados sean relevantes, estén bien descritos y no se repitan entre miembros
+            del grupo.</td>
+          <td>Alberto García Olmedilla</td>
+        </tr>
+        <tr>
+          <td>Coordinador de documentos</td>
+          <td>Comprobar la calidad y fiabilidad de las fuentes documentales seleccionadas y homogeneizar el estilo de
+            redacción.</td>
+          <td>Diego López Nogales</td>
+        </tr>
+        <tr>
+          <td>Coordinador de software</td>
+          <td>Validar que las herramientas elegidas sean adecuadas para desarrollar con cada tecnología y revisar
+            enlaces y licencias.</td>
+          <td>Raúl Rodríguez Santos</td>
+        </tr>
+        <tr>
+          <td>Coordinador de proyectos de I+D</td>
+          <td>Verificar la relación de los proyectos con universidades del ranking de Shanghai o de la red EUGLOH y
+            revisar su coherencia con la línea de investigación.</td>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <td>Responsable de calidad del HTML</td>
+          <td>Revisar la estructura del documento, corregir errores de etiquetas, enlaces rotos y uniformidad visual del
+            informe.</td>
+          <td>Marcos Corrochano Arroyo</td>
+        </tr>
+        <tr>
+          <td>Responsable de presentación</td>
+          <td>Coordinar la elaboración de las diapositivas y asegurar una exposición equilibrada entre todos los
+            miembros.</td>
+          <td>Gonzalo López Menor</td>
+        </tr>
+      </table>
+
+      <h3>5.4. Uso de LLM/ChatGPT en el desarrollo del trabajo</h3>
+      <p>
+        Durante el desarrollo del trabajo se han utilizado herramientas de apoyo basadas en LLM/ChatGPT como asistencia
+        complementaria para tareas concretas, siempre revisando manualmente los resultados antes de incorporarlos al
+        informe.
+      </p>
+      <ul>
+        <li>Búsqueda inicial de ideas para tecnologías comparables dentro de la misma línea de investigación.</li>
+        <li>Ayuda en la reformulación y mejora de textos descriptivos para mantener claridad y uniformidad.</li>
+        <li>Apoyo en la detección de errores de sintaxis HTML y en la corrección de etiquetas.</li>
+        <li>Propuesta de estructuras comparativas y tablas para mejorar la calidad del apartado 5.</li>
+        <li>Verificación preliminar de la coherencia entre recursos, tecnologías y línea de investigación.</li>
+        <li>Uso para el formato y creacion de tablas en el lenguaje de HTML</li>
+      </ul>
+      <p>
+        El grupo ha considerado estas herramientas como apoyo a la redacción y organización, pero no como sustitución
+        del análisis propio. La validación final de contenidos, enlaces y coherencia académica se ha realizado
+        manualmente.
+      </p>
+    </section>
+    <section id="6">
+      <h2>6. Apéndices</h2>
+      <p>Información con elementos adicionales sobre las tecnologías analizadas en el trabajo.</p>
+
+      <h3>Scikit-learn</h3>
+      <p>
+        <a href="https://scikit-learn.org/" target="_blank">Scikit-learn</a> es una biblioteca de aprendizaje automático
+        para Python utilizada ampliamente en proyectos de ciencia de datos y análisis de datos.
+        Proporciona herramientas para tareas como clasificación, regresión, clustering y selección de modelos.
+        Esta biblioteca está construida sobre otras herramientas fundamentales del ecosistema científico de Python como
+        NumPy y SciPy, lo que facilita su integración en proyectos de análisis de datos y machine learning.
+      </p>
+
+      <p><strong>Ejemplo mínimo de uso:</strong></p>
+      <pre>
+        from sklearn.datasets import load_iris
+        from sklearn.ensemble import RandomForestClassifier
+        
+        data = load_iris()
+        model = RandomForestClassifier()
+        model.fit(data.data, data.target)
+      </pre>
+
+
+      <h3>PyCaret</h3>
+      <p>
+        <a href="https://pycaret.org/" target="_blank">PyCaret</a> es una biblioteca de Python orientada a simplificar
+        el desarrollo de modelos de aprendizaje automático mediante técnicas de Automated Machine Learning (AutoML).
+        Permite realizar tareas de clasificación, regresión o clustering con muy pocas líneas de código, automatizando
+        procesos como la preparación de datos, comparación de modelos y optimización de hiperparámetros.
+      </p>
+
+      <p><strong>Ejemplo mínimo de uso:</strong></p>
+      <pre>
+        from pycaret.classification import *
+        
+        data = get_data('iris')
+        clf = setup(data=data, target='species')
+        best_model = compare_models()
+      </pre>
+
+    </section>
+  </main>
+</body>
+
+</html>

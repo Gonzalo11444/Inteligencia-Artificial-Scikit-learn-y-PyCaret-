@@ -1,0 +1,2 @@
+accuracy,precision_riesgo,recall_riesgo,f1_riesgo,setup_time_seconds,training_time_seconds,prediction_time_seconds,total_time_seconds,random_state
+0.9421487603305785,0.9321428571428572,0.9190140845070423,0.925531914893617,0.6938351999997394,11.934153799999876,0.14939430000003995,12.777383299999656,42

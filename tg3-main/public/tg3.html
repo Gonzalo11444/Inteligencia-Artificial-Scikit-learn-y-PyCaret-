@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es">
+  <meta charset="utf-8" />
+  <title>Trabajo en grupo TG3</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Desarrollo con Tecnologias Emergentes. Curso 2025-26<br /> Trabajo TG3 del grupo 02<br /> Titulo: TG3.
+      Desarrollo de prototipos y evaluación con tecnologías emergentes</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="https://uah.blackboard.com#1">1. Información general</a></li>
+      <li><a href="https://uah.blackboard.com#2">2. Requisitos de los prototipos a implementar</a></li>
+      <li><a href="https://uah.blackboard.com#3">3. Criterios de comparación de los prototipos</a></li>
+      <li><a href="https://uah.blackboard.com#4">4. Implementación del prototipo con tecnología A</a></li>
+      <li><a href="https://uah.blackboard.com#5">5. Implementación del prototipo con tecnología B</a></li>
+      <li><a href="https://uah.blackboard.com#6">6. Comparación de los prototipos</a></li>
+      <li><a href="https://uah.blackboard.com#7">7. Conclusiones</a></li>
+      <li><a href="https://uah.blackboard.com#7">8. Aspectos complementarios</a></li>
+      <li><a href="https://uah.blackboard.com#8">9. Anexos</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="1">
+      <h2>1. Información general</h2>
+      <h3>1.1 Autores</h3>
+      <p>Gonzalo López Menor, Marcos Corrochano Arroyo, Raúl Rodriguez Santos, Alberto García Olmedilla, Diego López
+        Nogales</p>
+      <h3>1.2 Proyecto Scrum y repositorio en GitLab</h3>
+      <p> <a href="https://gitlab.com/dte2026a3g02/tg3/">https://gitlab.com/dte2026a3g02/tg3/</a>".</p>
+      <h3>1.3 Burndown chart</h3>
+      <p>En este apartado se debe incrustar la imagen del diagrama Burndown final del Sprint TG3.</p>
+
+      <img src="burndown-chart-TG3-02.JPG" alt="Burndown chart TG3" width="900" />
+
+      <h3>1.4 Presentación del trabajo</h3>
+      <p>
+        La presentación con diapositivas del trabajo TG3 se encuentra disponible en el siguiente enlace:
+        <a href="TG3_presentacion.pdf">TG3_presentacion.pdf</a>
+        <a href="TG3_presentacion.pptx">TG3_presentacion.pptx</a>
+      </p>
+    </section>
+
+    <section id="2">
+      <h2>2. Requisitos de los prototipos a implementar</h2>
+      <h3>2.1 Catálogo de requisitos</h3>
+      <table>
+        <tbody>
+          <tr>
+            <th>Req.</th>
+            <th>Descripcion</th>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>El prototipo debe cargar un dataset educativo en formato CSV</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>El prototipo debe identificar una variable objetivo binaria de aprobado/riesgo</td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td>El prototipo debe separar variables predictoras y variable objetivo</td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td>El prototipo debe realizar preprocesamiento de variables numéricas y categóricas</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td>El prototipo debe dividir los datos en entrenamiento y prueba</td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td>El prototipo debe entrenar al menos un modelo de clasificación</td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td>El prototipo debe calcular accuracy, precision, recall y F1-score</td>
+          </tr>
+          <tr>
+            <td>08</td>
+            <td>El prototipo debe generar una matriz de confusión.</td>
+          </tr>
+          <tr>
+            <td>09</td>
+            <td>El prototipo debe medir tiempo de entrenamiento</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>El prototipo debe medir tiempo de predicción</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>El prototipo debe guardar los resultados en carpeta results</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>El prototipo debe permitir reproducir el experimento con semilla fija</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>El prototipo debe incluir instrucciones de instalación y ejecución</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>El prototipo debe registrar dependencias en requirements.txt</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>El prototipo debe permitir modificar fácilmente modelo/dataset</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="3">
+      <h2>3. Criterios de comparación de los prototipos</h2>
+
+      <p>
+        Los siguientes criterios se utilizarán para comparar de forma objetiva los dos prototipos desarrollados:
+        el prototipo A, implementado con Scikit-learn, y el prototipo B, implementado con PyCaret. Ambos prototipos
+        utilizan el mismo dataset, la misma transformación de la variable objetivo y el mismo planteamiento general
+        de clasificación binaria: éxito académico o riesgo académico.
+      </p>
+
+      <p>
+        Los criterios se han definido para evaluar tanto la calidad predictiva de los modelos como el esfuerzo de
+        desarrollo, la facilidad de instalación, la reproducibilidad y la mantenibilidad del código.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Código</th>
+            <th>Criterio</th>
+            <th>Descripción</th>
+            <th>Tipo de valor</th>
+            <th>Forma de medición</th>
+          </tr>
+
+          <tr>
+            <td>C01</td>
+            <td>Tiempo de entrenamiento del modelo</td>
+            <td>
+              Tiempo registrado durante el proceso de entrenamiento del modelo seleccionado. En Scikit-learn se mide el
+              entrenamiento final del modelo elegido, mientras que en PyCaret se incluye la fase automática de
+              comparación
+              y selección de modelos.
+            </td>
+            <td>Numérico, segundos</td>
+            <td>Valor registrado automáticamente en los archivos de resultados de cada prototipo.</td>
+          </tr>
+
+          <tr>
+            <td>C02</td>
+            <td>Tiempo de predicción</td>
+            <td>
+              Tiempo que tarda cada prototipo en generar predicciones sobre el conjunto de prueba una vez entrenado el
+              modelo.
+            </td>
+            <td>Numérico, segundos</td>
+            <td>Medición automática durante la ejecución del script.</td>
+          </tr>
+
+          <tr>
+            <td>C03</td>
+            <td>Exactitud del modelo</td>
+            <td>
+              Proporción total de casos del conjunto de prueba clasificados correctamente por el modelo.
+            </td>
+            <td>Numérico, valor entre 0 y 1</td>
+            <td>Accuracy calculada sobre el conjunto de prueba.</td>
+          </tr>
+
+          <tr>
+            <td>C04</td>
+            <td>F1-score</td>
+            <td>
+              Métrica que combina precision y recall. Se utiliza para valorar el equilibrio del modelo al detectar la
+              clase
+              Riesgo.
+            </td>
+            <td>Numérico, valor entre 0 y 1</td>
+            <td>F1-score calculado para la clase Riesgo.</td>
+          </tr>
+
+          <tr>
+            <td>C05</td>
+            <td>Precision para la clase Riesgo</td>
+            <td>
+              Proporción de estudiantes predichos como Riesgo que realmente pertenecen a la clase Riesgo.
+            </td>
+            <td>Numérico, valor entre 0 y 1</td>
+            <td>Precision calculada para la clase Riesgo.</td>
+          </tr>
+
+          <tr>
+            <td>C06</td>
+            <td>Recall para la clase Riesgo</td>
+            <td>
+              Proporción de estudiantes que realmente pertenecen a la clase Riesgo y que el modelo detecta
+              correctamente.
+            </td>
+            <td>Numérico, valor entre 0 y 1</td>
+            <td>Recall calculado para la clase Riesgo.</td>
+          </tr>
+
+          <tr>
+            <td>C07</td>
+            <td>Líneas efectivas de código necesarias para cumplir los requisitos</td>
+            <td>
+              Número de líneas de código necesarias para implementar la funcionalidad del prototipo, excluyendo
+              comentarios
+              y líneas en blanco.
+            </td>
+            <td>Numérico, líneas efectivas de código</td>
+            <td>Conteo del archivo principal de cada prototipo.</td>
+          </tr>
+
+          <tr>
+            <td>C08</td>
+            <td>Horas empleadas en el desarrollo</td>
+            <td>
+              Tiempo estimado invertido por el equipo en implementar, probar y documentar cada prototipo.
+            </td>
+            <td>Numérico, horas</td>
+            <td>Estimación registrada por el equipo durante el desarrollo.</td>
+          </tr>
+
+          <tr>
+            <td>C09</td>
+            <td>Dificultad de instalación y configuración del entorno</td>
+            <td>
+              Complejidad para crear el entorno, instalar dependencias y ejecutar correctamente el prototipo.
+            </td>
+            <td>Cualitativo: Baja, Media o Alta</td>
+            <td>Valoración del equipo a partir de las incidencias encontradas durante la instalación.</td>
+          </tr>
+
+          <tr>
+            <td>C10</td>
+            <td>Cantidad de código de preprocesamiento requerido</td>
+            <td>
+              Grado de código manual necesario para preparar los datos antes del entrenamiento del modelo.
+            </td>
+            <td>Cualitativo / Numérico</td>
+            <td>Revisión del código dedicado a limpieza, transformación y preparación de variables.</td>
+          </tr>
+
+          <tr>
+            <td>C11</td>
+            <td>Facilidad de sustitución del modelo o dataset</td>
+            <td>
+              Facilidad para cambiar el algoritmo de clasificación o adaptar el prototipo a otro dataset educativo.
+            </td>
+            <td>Cualitativo: Baja, Media o Alta</td>
+            <td>Valoración según el número de cambios necesarios en el código.</td>
+          </tr>
+
+          <tr>
+            <td>C12</td>
+            <td>Reproducibilidad del experimento</td>
+            <td>
+              Capacidad de repetir la ejecución bajo las mismas condiciones y obtener resultados equivalentes.
+            </td>
+            <td>Booleano: Sí / No</td>
+            <td>Uso de semilla fija en ambos prototipos: random_state=42 en Scikit-learn y session_id=42 en PyCaret.
+            </td>
+          </tr>
+
+          <tr>
+            <td>C13</td>
+            <td>Número de dependencias externas</td>
+            <td>
+              Número de paquetes principales declarados en el archivo requirements.txt de cada prototipo.
+            </td>
+            <td>Numérico</td>
+            <td>Conteo de dependencias principales incluidas en requirements.txt.</td>
+          </tr>
+
+          <tr>
+            <td>C14</td>
+            <td>Legibilidad y mantenibilidad del código</td>
+            <td>
+              Claridad del código, facilidad de comprensión y posibilidad de modificarlo posteriormente.
+            </td>
+            <td>Cualitativo: Baja, Media o Alta</td>
+            <td>Valoración del equipo tras revisar la estructura y claridad de cada script.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="4">
+      <h2>4. Implementación del prototipo con Scikit-learn</h2>
+
+      <h3>4.1 Enlace al prototipo A en GitLab</h3>
+
+      <p>
+        Toda la documentación, código fuente, dataset y resultados generados durante la implementación del prototipo A
+        se encuentran en la siguiente carpeta del repositorio:
+        <a href="https://gitlab.com/dte2026a3g02/tg3/-/tree/main/prototipo-A/">
+          https://gitlab.com/dte2026a3g02/tg3/-/tree/main/prototipo-A/
+        </a>.
+      </p>
+
+      <h3>4.2 Descripción general del prototipo</h3>
+
+      <p>
+        El prototipo A se ha desarrollado utilizando Scikit-learn, la biblioteca de aprendizaje automático más utilizada
+        en Python.
+
+        El objetivo del prototipo es predecir si un estudiante se encuentra en situación de éxito académico (Exito) o
+        riesgo académico (Riesgo), a partir del dataset educativo Predict Students' Dropout and Academic Success.
+
+        A diferencia del prototipo B (PyCaret), en el prototipo A el pipeline completo —preprocesamiento, entrenamiento
+        y evaluación— se construye de forma explícita mediante código Python, lo que ofrece mayor control sobre cada
+        paso del proceso.
+
+        Al igual que en el prototipo B, la variable objetivo original Target se ha transformado en una variable binaria.
+        Los registros con valor Graduate se consideran casos de éxito académico y los registros con valor Dropout se
+        consideran casos de riesgo académico.
+
+        Los registros con valor Enrolled se han excluido del experimento, ya que representan estudiantes que aún
+        continúan matriculados y no permiten determinar un resultado académico final.
+        <em>Predict Students' Dropout and Academic Success</em>.
+      </p>
+
+
+      <h3>4.3 Estructura de la carpeta del prototipo A</h3>
+
+      <p>
+        La carpeta prototipo-A contiene los siguientes elementos:
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Elemento</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td><code>README.md</code></td>
+            <td>Documento con la descripción del prototipo, instrucciones de instalación, ejecución y explicación de los
+              resultados generados.</td>
+          </tr>
+          <tr>
+            <td><code>requirements.txt</code></td>
+            <td>Archivo con las dependencias necesarias para ejecutar el prototipo: scikit-learn, pandas, numpy,
+              matplotlib y joblib.</td>
+          </tr>
+          <tr>
+            <td><code>data/data.csv</code></td>
+            <td>Dataset educativo utilizado para entrenar y evaluar el modelo predictivo (separador de columnas: punto y
+              coma).</td>
+          </tr>
+          <tr>
+            <td><code>src/prototipo_sklearn.py</code></td>
+            <td>Archivo principal del prototipo. Carga el dataset, prepara la variable objetivo, construye el pipeline
+              de Scikit-learn, compara 13 modelos, entrena el mejor, genera predicciones y guarda todos los resultados.
+            </td>
+          </tr>
+          <tr>
+            <td><code>results/</code></td>
+            <td>Carpeta donde se almacenan automáticamente las métricas, tiempos de ejecución, matriz de confusión,
+              comparación de modelos y modelo entrenado serializado.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.4 Funcionamiento del prototipo</h3>
+
+      <p>
+        El funcionamiento del prototipo sigue los siguientes pasos:
+      </p>
+
+      <ol>
+        <li>Carga del dataset educativo desde el archivo data.csv (separador ;).</li>
+        <li>Limpieza de los nombres de columnas (espacios y caracteres especiales).</li>
+        <li>Filtrado de los registros para conservar únicamente las clases Graduate y Dropout.</li>
+        <li>Creación de la variable objetivo binaria Target_binary, con las clases Exito y Riesgo.</li>
+        <li>Separación de variables predictoras (X) y variable objetivo (y).</li>
+        <li>División de los datos en entrenamiento (80 %) y prueba (20 %) con semilla fija (random_state=42).</li>
+        <li>Comparación automática de 13 modelos de clasificación mediante validación cruzada de 5 folds.</li>
+        <li>Selección del mejor modelo según la métrica F1-score ponderada.</li>
+        <li>Entrenamiento del mejor modelo sobre todo el conjunto de entrenamiento dentro de un Pipeline con
+          StandardScaler.</li>
+        <li>Generación de predicciones sobre el conjunto de prueba.</li>
+        <li>Cálculo de métricas de evaluación: accuracy, precision, recall y F1-score sobre la clase Riesgo.</li>
+        <li>Generación y almacenamiento de la matriz de confusión (CSV y PNG).</li>
+        <li>Medición de tiempos de entrenamiento y predicción por separado.</li>
+        <li>Guardado del modelo entrenado y de todos los resultados en la carpeta results.</li>
+      </ol>
+
+      <h3>4.5 Instalación y ejecución</h3>
+
+      <p>
+        El prototipo A presenta una instalación más sencilla que el prototipo B en el entorno utilizado, ya que
+        Scikit-learn no requirió cambiar la versión de Python durante las pruebas realizadas. En cambio, PyCaret sí
+        exigió utilizar una versión compatible concreta, Python 3.10 o Python 3.11.
+      </p>
+
+      <p>
+        Desde la carpeta prototipo-A, los pasos de instalación y ejecución son los siguientes:
+      </p>
+
+      <pre>python -m venv .venv
+        .venv\Scripts\activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        python src/prototipo_sklearn.py</pre>
+
+      <h3>4.6 Resultados generados</h3>
+
+      <p>
+        Tras la ejecución del prototipo, se generaron los siguientes archivos en la carpeta results:
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Archivo generado</th>
+            <th>Contenido</th>
+          </tr>
+          <tr>
+            <td><code>dataset_info_sklearn.txt</code></td>
+            <td>Información general del dataset utilizado, número de filas, columnas y distribución de la variable
+              objetivo.</td>
+          </tr>
+          <tr>
+            <td><code>comparacion_modelos_sklearn.csv</code></td>
+            <td>Tabla comparativa de los 13 modelos evaluados mediante validación cruzada, ordenados por F1-score
+              descendente.</td>
+          </tr>
+          <tr>
+            <td><code>metricas_sklearn.csv</code></td>
+            <td>Métricas finales del mejor modelo seleccionado: accuracy, precision, recall, F1-score y tiempos.</td>
+          </tr>
+          <tr>
+            <td></code>matriz_confusion_sklearn.csv</code></td>
+            <td>Matriz de confusión en formato CSV.</td>
+          </tr>
+          <tr>
+            <td><code>matriz_confusion_sklearn.png</code></td>
+            <td>Imagen de la matriz de confusión generada durante la evaluación.</td>
+          </tr>
+          <tr>
+            <td><code>classification_report_sklearn.txt</code></td>
+            <td>Informe de clasificación completo con precision, recall y F1-score por clase.</td>
+          </tr>
+          <tr>
+            <td><code>tiempos_sklearn.txt</code></td>
+            <td>Registro de los tiempos de entrenamiento, predicción y tiempo total de ejecución.</td>
+          </tr>
+          </tr>
+          <td></code>modelo_sklearn.pkl</code></td>
+          <td>Modelo entrenado serializado con joblib para su posible reutilización.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.7 Resultados obtenidos</h3>
+
+      <p>
+        Durante la ejecución, el prototipo A comparó 13 modelos de clasificación mediante validación cruzada y
+        seleccionó como mejor modelo una Logistic Regression, que obtuvo el mayor F1-score ponderado en el conjunto de
+        entrenamiento. Los resultados obtenidos sobre el conjunto de prueba fueron los siguientes:
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Métrica</th>
+            <th>Resultado</th>
+          </tr>
+          <tr>
+            <td>Modelo seleccionado</td>
+            <td>Logistic Regression</td>
+          </tr>
+          <tr>
+            <td>Accuracy</td>
+            <td>0.9421</td>
+          </tr>
+          <tr>
+            <td>Precision para la clase Riesgo</td>
+            <td>0.9321</td>
+          </tr>
+          <tr>
+            <td>Recall para la clase Riesgo</td>
+            <td>0.9190</td>
+          </tr>
+          <tr>
+            <td>F1-score para la clase Riesgo</td>
+            <td>0.9255</td>
+          </tr>
+          <tr>
+            <td>Tiempo de entrenamiento</td>
+            <td>0.0156 segundos</td>
+          </tr>
+          <tr>
+            <td>Tiempo de predicción</td>
+            <td>0.0021 segundos</td>
+          </tr>
+          <tr>
+            <td>Tiempo total</td>
+            <td>0.0177 segundos</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.8 Observaciones sobre la implementación</h3>
+
+      <p>
+        La principal ventaja observada en el uso de Scikit-learn es el control explícito sobre cada etapa del pipeline.
+        El desarrollador define manualmente el preprocesamiento, la partición de datos, el modelo y las métricas, lo que
+        permite un entendimiento completo del proceso y una mayor capacidad de ajuste fino en cada paso.
+      </p>
+
+      <p>
+        Como limitación, la implementación manual requiere más tiempo de desarrollo que PyCaret para cubrir la misma
+        funcionalidad. Sin embargo, en las pruebas realizadas la instalación de Scikit-learn resultó más sencilla, ya
+        que no
+        fue necesario cambiar la versión de Python del entorno. Además, los tiempos de entrenamiento y predicción del
+        modelo
+        final son menores. No obstante, esta comparación debe interpretarse teniendo en cuenta que el tiempo medido en
+        Scikit-learn corresponde al entrenamiento final del modelo seleccionado, mientras que PyCaret incluye una fase
+        adicional de comparación automática de modelos.
+      </p>
+    </section>
+    <section id="5">
+      <h2>5. Implementación del prototipo con PyCaret</h2>
+
+      <h3>5.1 Enlace al prototipo B en GitLab</h3>
+
+      <p>
+        Toda la documentación, código fuente, dataset y resultados generados durante la implementación del prototipo B
+        se encuentran en la siguiente carpeta del repositorio:
+        <a href="https://gitlab.com/dte2026a3g02/tg3/-/tree/main/prototipo-B/">
+          https://gitlab.com/dte2026a3g02/tg3/-/tree/main/prototipo-B/
+        </a>.
+      </p>
+
+      <h3>5.2 Descripción general del prototipo</h3>
+
+      <p>
+        El prototipo B se ha desarrollado utilizando PyCaret, una biblioteca de aprendizaje automático de bajo código
+        para Python.
+        El objetivo del prototipo es predecir si un estudiante se encuentra en situación de éxito académico o
+        riesgo académico a partir del dataset educativo
+        <em>Predict Students' Dropout and Academic Success</em>.
+      </p>
+
+      <p>
+        Para simplificar el problema y mantener una comparación equivalente con el prototipo A, se ha transformado la
+        variable objetivo original
+        <code>Target</code> en una variable binaria. Los registros con valor <code>Graduate</code> se consideran casos
+        de éxito académico,
+        mientras que los registros con valor <code>Dropout</code> se consideran casos de riesgo académico. Los registros
+        con valor
+        <code>Enrolled</code> se han excluido del experimento, ya que representan estudiantes que todavía continúan
+        matriculados y no permiten
+        determinar un resultado académico final.
+      </p>
+      <p>
+        El prototipo funciona como un modelo predictivo de clasificación. A partir de los datos históricos de
+        estudiantes incluidos
+        en el dataset, PyCaret entrena un modelo para aprender patrones asociados al éxito académico y al abandono.
+        Después, el
+        modelo se evalúa sobre un conjunto de prueba que no se ha utilizado durante el entrenamiento, intentando
+        predecir si cada
+        estudiante pertenece a la clase <code>Exito</code> o a la clase <code>Riesgo</code>. Como el dataset contiene el
+        resultado
+        real de cada estudiante, es posible comparar las predicciones del modelo con los valores reales y calcular
+        métricas como
+        accuracy, precision, recall y F1-score.
+      </p>
+
+      <h3>5.3 Estructura de la carpeta del prototipo B</h3>
+
+      <p>
+        La carpeta <code>prototipo-B</code> contiene los siguientes elementos:
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Elemento</th>
+            <th>Descripción</th>
+          </tr>
+          <tr>
+            <td><code>README.md</code></td>
+            <td>Documento con la descripción del prototipo, instrucciones de instalación, ejecución y explicación de los
+              resultados generados.</td>
+          </tr>
+          <tr>
+            <td><code>requirements.txt</code></td>
+            <td>Archivo con las dependencias necesarias para ejecutar el prototipo, incluyendo PyCaret, pandas,
+              scikit-learn, matplotlib y joblib.</td>
+          </tr>
+          <tr>
+            <td><code>data/data.csv</code></td>
+            <td>Dataset educativo utilizado para entrenar y evaluar el modelo predictivo.</td>
+          </tr>
+          <tr>
+            <td><code>src/prototipo_pycaret.py</code></td>
+            <td>Archivo principal del prototipo. Carga el dataset, prepara la variable objetivo, configura PyCaret,
+              entrena modelos, genera predicciones y guarda los resultados.</td>
+          </tr>
+          <tr>
+            <td><code>results/</code></td>
+            <td>Carpeta donde se almacenan automáticamente las métricas, tiempos de ejecución, matriz de confusión,
+              comparación de modelos y modelo entrenado.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5.4 Funcionamiento del prototipo</h3>
+
+      <p>
+        El funcionamiento del prototipo sigue los siguientes pasos:
+      </p>
+
+      <ol>
+        <li>Carga del dataset educativo desde el archivo <code>data.csv</code>.</li>
+        <li>Limpieza básica de los nombres de columnas.</li>
+        <li>Filtrado de los registros para conservar únicamente las clases <code>Graduate</code> y <code>Dropout</code>.
+        </li>
+        <li>Creación de la variable objetivo binaria <code>Target_binary</code>, con las clases <code>Exito</code> y
+          <code>Riesgo</code>.
+        </li>
+        <li>Configuración del experimento de clasificación con PyCaret.</li>
+        <li>Comparación automática de distintos modelos de clasificación.</li>
+        <li>Selección del mejor modelo según la métrica F1-score.</li>
+        <li>Generación de predicciones sobre el conjunto de prueba.</li>
+        <li>Cálculo de métricas de evaluación: accuracy, precision, recall y F1-score.</li>
+        <li>Generación y almacenamiento de la matriz de confusión.</li>
+        <li>Medición de tiempos de configuración, entrenamiento y predicción.</li>
+        <li>Guardado del modelo entrenado y de todos los resultados en la carpeta <code>results</code>.</li>
+      </ol>
+
+      <h3>5.5 Instalación y ejecución</h3>
+
+      <p>
+        Para ejecutar el prototipo B se recomienda utilizar Python 3.10 o Python 3.11, ya que PyCaret 3.3.2 no es
+        compatible con Python 3.12.
+      </p>
+
+      <p>
+        Desde la carpeta <code>prototipo-B</code>, los pasos de instalación y ejecución son los siguientes:
+      </p>
+
+      <pre><code>python -m venv .venv
+      .venv\Scripts\activate
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+      python src/prototipo_pycaret.py</code></pre>
+
+      <h3>5.6 Resultados generados</h3>
+
+      <p>
+        Tras la ejecución del prototipo, se generaron los siguientes archivos en la carpeta <code>results</code>:
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Archivo generado</th>
+            <th>Contenido</th>
+          </tr>
+          <tr>
+            <td><code>dataset_info_pycaret.txt</code></td>
+            <td>Información general del dataset utilizado, número de filas, columnas y distribución de la variable
+              objetivo.</td>
+          </tr>
+          <tr>
+            <td><code>comparacion_modelos_pycaret.csv</code></td>
+            <td>Tabla comparativa de los modelos evaluados automáticamente por PyCaret.</td>
+          </tr>
+          <tr>
+            <td><code>metricas_pycaret.csv</code></td>
+            <td>Métricas finales del mejor modelo seleccionado.</td>
+          </tr>
+          <tr>
+            <td><code>matriz_confusion_pycaret.csv</code></td>
+            <td>Matriz de confusión en formato CSV.</td>
+          </tr>
+          <tr>
+            <td><code>matriz_confusion_pycaret.png</code></td>
+            <td>Imagen de la matriz de confusión generada durante la evaluación.</td>
+          </tr>
+          <tr>
+            <td><code>modelo_pycaret.pkl</code></td>
+            <td>Modelo entrenado guardado para su posible reutilización.</td>
+          </tr>
+          <tr>
+            <td><code>tiempos_pycaret.txt</code></td>
+            <td>Registro de los tiempos de configuración, entrenamiento, predicción y ejecución total.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5.7 Resultados obtenidos</h3>
+
+      <p>
+        Durante la ejecución, PyCaret comparó automáticamente varios modelos de clasificación y seleccionó como mejor
+        modelo una
+        <strong>regresión logística</strong>. Los resultados obtenidos por el prototipo B fueron los siguientes:
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Métrica</th>
+            <th>Resultado</th>
+          </tr>
+          <tr>
+            <td>Modelo seleccionado</td>
+            <td>Logistic Regression</td>
+          </tr>
+          <tr>
+            <td>Accuracy</td>
+            <td>0.9421</td>
+          </tr>
+          <tr>
+            <td>Precision para la clase Riesgo</td>
+            <td>0.9321</td>
+          </tr>
+          <tr>
+            <td>Recall para la clase Riesgo</td>
+            <td>0.9190</td>
+          </tr>
+          <tr>
+            <td>F1-score para la clase Riesgo</td>
+            <td>0.9255</td>
+          </tr>
+          <tr>
+            <td>Tiempo de configuración</td>
+            <td>0.6938 segundos</td>
+          </tr>
+          <tr>
+            <td>Tiempo de entrenamiento/comparación</td>
+            <td>11.9342 segundos</td>
+          </tr>
+          <tr>
+            <td>Tiempo de predicción</td>
+            <td>0.1494 segundos</td>
+          </tr>
+          <tr>
+            <td>Tiempo total</td>
+            <td>12.7774 segundos</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>5.8 Observaciones sobre la implementación</h3>
+
+      <p>
+        La principal ventaja observada en el uso de PyCaret es la automatización del flujo de trabajo de aprendizaje
+        automático.
+        Con pocas líneas de código, la biblioteca permite configurar el experimento, realizar el preprocesamiento,
+        comparar modelos,
+        seleccionar el mejor clasificador y generar predicciones. Esto reduce el esfuerzo de desarrollo frente a una
+        implementación
+        manual.
+      </p>
+
+      <p>
+        Como limitación, PyCaret ofrece menos control detallado sobre algunas fases internas del proceso, ya que muchas
+        tareas se
+        ejecutan de forma automática. Además, requiere una versión compatible de Python, en este caso Python 3.10 o
+        3.11, y puede
+        generar advertencias relacionadas con dependencias opcionales no instaladas. Estas advertencias no impidieron la
+        ejecución
+        correcta del prototipo.
+      </p>
+    </section>
+    <section id="6">
+      <h2>6. Comparación de los prototipos</h2>
+
+      <p>
+        En este apartado se comparan los dos prototipos desarrollados a partir de los criterios definidos en el apartado
+        3. La comparación se realiza sobre prototipos equivalentes, ya que ambos utilizan el mismo dataset educativo, la
+        misma transformación de la variable objetivo y el mismo planteamiento general de clasificación binaria: éxito
+        académico o riesgo académico.
+
+        El prototipo A se ha implementado con Scikit-learn, mientras que el prototipo B se ha implementado con PyCaret.
+        Ambos seleccionaron Logistic Regression como mejor modelo tras comparar automáticamente múltiples
+        clasificadores.
+      </p>
+
+      <h3>6.1 Tabla comparativa según los criterios definidos</h3>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Criterio</th>
+            <th>Prototipo A: Scikit-learn</th>
+            <th>Prototipo B: PyCaret</th>
+            <th>Comentarios</th>
+          </tr>
+
+          <tr>
+            <td>Tiempo de entrenamiento del modelo</td>
+            <td>0.0156 segundos</td>
+            <td>11.9342 segundos</td>
+            <td>
+              El prototipo A registra el tiempo de entrenamiento final del modelo seleccionado con Scikit-learn. En
+              cambio, el
+              valor del prototipo B incluye la comparación automática de múltiples modelos mediante PyCaret. Por tanto,
+              este
+              criterio muestra que Scikit-learn es más rápido en el ajuste final del modelo, mientras que PyCaret
+              incorpora en ese
+              tiempo una fase adicional de automatización y selección de modelos.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Tiempo de predicción</td>
+            <td>0.0021 segundos</td>
+            <td>0.1494 segundos</td>
+            <td>
+              El prototipo A realiza la predicción directamente sobre el pipeline entrenado, mientras que PyCaret
+              utiliza la función
+              <code>predict_model()</code>, que añade una capa adicional de abstracción. Por ello, Scikit-learn obtiene
+              un tiempo de
+              predicción inferior, aunque ambos tiempos son bajos para el tamaño del conjunto de prueba utilizado.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Exactitud del modelo</td>
+            <td>0.9421</td>
+            <td>0.9421</td>
+            <td>
+              Ambos prototipos obtienen exactamente la misma exactitud, lo que refuerza que el experimento es
+              equivalente y reproducible con los mismos datos, semilla y partición.
+            </td>
+          </tr>
+
+          <tr>
+            <td>F1-score</td>
+            <td>0.9255</td>
+            <td>0.9255</td>
+            <td>
+              El F1-score es idéntico en ambos prototipos, lo que indica que ambos detectan el riesgo académico con el
+              mismo equilibrio entre precisión y recall.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Precision para la clase Riesgo</td>
+            <td>0.9321</td>
+            <td>0.9321</td>
+            <td>
+              La precisión coincide en ambos prototipos. Ambos reducen de forma equivalente los falsos positivos en la
+              identificación de estudiantes con riesgo de abandono.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Recall para la clase Riesgo</td>
+            <td>0.9190</td>
+            <td>0.9190</td>
+            <td>
+              El recall es también idéntico, confirmando que ambos prototipos detectan la misma proporción de
+              estudiantes reales en situación de riesgo académico.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Líneas de código necesarias para cumplir los requisitos</td>
+            <td>175 líneas</td>
+            <td>109 líneas</td>
+            <td>
+              En los scripts desarrollados, el prototipo B con PyCaret requiere menos líneas de código que el prototipo
+              A con
+              Scikit-learn. Esta diferencia se debe a que PyCaret automatiza parte del flujo de trabajo de aprendizaje
+              automático,
+              como la configuración del experimento, el preprocesamiento, la comparación de modelos y la selección del
+              mejor
+              clasificador. En cambio, Scikit-learn requiere más código explícito, pero ofrece mayor control sobre cada
+              fase del
+              proceso.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Horas empleadas en el desarrollo</td>
+            <td>3 horas</td>
+            <td>1,5 horas</td>
+            <td>
+              PyCaret redujo a la mitad el tiempo de desarrollo gracias a la automatización del pipeline. Scikit-learn
+              requirió mayor tiempo de codificación al construir manualmente cada componente del proceso.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Dificultad de instalación y configuración del entorno</td>
+            <td>Baja</td>
+            <td>Media</td>
+            <td>
+              Scikit-learn es compatible con Python 3.9 o superior sin restricciones adicionales. PyCaret requiere
+              específicamente Python 3.10 o 3.11, ya que no es compatible con Python 3.12, lo que añade complejidad a la
+              configuración del entorno. </td>
+          </tr>
+
+          <tr>
+            <td>Cantidad de código de preprocesamiento requerido</td>
+            <td>Alta (~20 líneas explícitas)</td>
+            <td>Baja (automático)</td>
+            <td>
+              En Scikit-learn el preprocesamiento se define explícitamente con StandardScaler dentro de un Pipeline.
+              PyCaret automatiza esta fase internamente, por lo que el código necesario para preparar los datos es
+              mínimo.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Facilidad de sustitución del modelo o dataset</td>
+            <td>Alta</td>
+            <td>Media-Alta</td>
+            <td>
+              En Scikit-learn basta con sustituir el estimador en el Pipeline (1 línea). En PyCaret es también sencillo,
+              aunque el control interno del pipeline es menor y algunos ajustes requieren conocer la API específica de
+              la biblioteca. </td>
+          </tr>
+
+          <tr>
+            <td>Reproducibilidad del experimento</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td>
+              Ambos prototipos utilizan semilla fija (random_state=42 / session_id=42), lo que garantiza resultados
+              idénticos en ejecuciones consecutivas bajo las mismas condiciones.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Número de dependencias externas</td>
+            <td>5 dependencias</td>
+            <td>5 dependencias principales</td>
+            <td>
+              Ambos prototipos declaran 5 paquetes en requirements.txt. Sin embargo, PyCaret instala internamente un
+              número mucho mayor de subdependencias, lo que incrementa el tamaño del entorno virtual y el tiempo de
+              instalación.
+            </td>
+          </tr>
+
+          <tr>
+            <td>Legibilidad y mantenibilidad del código</td>
+            <td>Alta</td>
+            <td>Media-Alta</td>
+            <td>
+              El código del prototipo A es explícito y fácil de seguir paso a paso. El del prototipo B es más breve,
+              pero parte del funcionamiento interno queda abstraído por PyCaret, lo que puede dificultar la comprensión
+              y el mantenimiento sin conocimiento previo de la biblioteca.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3>6.2 Comparación</h3>
+
+      <p>
+        El resultado más destacado de la comparación es que ambos prototipos obtienen métricas de clasificación
+        idénticas:
+        accuracy de 0.9421, F1-score de 0.9255, precision de 0.9321 y recall de 0.9190 para la clase Riesgo. Esto indica
+        que
+        ambos prototipos han resuelto el mismo problema predictivo de forma equivalente en este experimento, utilizando
+        los
+        mismos datos, la misma transformación de la variable objetivo, la misma semilla y el mismo tipo de modelo final.
+      </p>
+
+      <p>
+        Donde sí se observan diferencias relevantes es en el rendimiento computacional. El prototipo A registra un
+        tiempo de
+        entrenamiento final de 0.0156 segundos, frente a los 11.9342 segundos del prototipo B. Esta diferencia debe
+        interpretarse con cautela, ya que PyCaret incluye en ese tiempo la comparación automática de múltiples
+        clasificadores,
+        mientras que Scikit-learn mide únicamente el entrenamiento final del modelo seleccionado. Por tanto, cuando el
+        modelo
+        ya está decidido y se busca entrenarlo de forma eficiente, Scikit-learn ofrece una ventaja clara en tiempo de
+        ajuste
+        final.
+      </p>
+
+      <p>
+        En cuanto al esfuerzo de desarrollo, PyCaret redujo el tiempo estimado necesario para implementar el prototipo
+        (1,5 horas frente a 3 horas), principalmente por la automatización de tareas como la configuración del
+        experimento,
+        el preprocesamiento, la comparación de modelos y parte del flujo de trabajo de evaluación. Como contrapartida,
+        ofrece
+        menos control sobre el proceso interno. Scikit-learn requiere más código explícito, pero proporciona mayor
+        transparencia, flexibilidad y control sobre cada fase del pipeline, además de haber presentado una instalación
+        más
+        sencilla en este caso concreto.
+      </p>
+
+    </section>
+    <section id="7">
+      <h2>7. Conclusiones</h2>
+      <p>A partir de la implementación y comparación de los dos prototipos, el grupo extrae las siguientes conclusiones
+        sobre el uso de Scikit-learn y PyCaret para el desarrollo de modelos de clasificación en un contexto educativo.
+
+        En términos de calidad predictiva, ambas tecnologías producen resultados equivalentes cuando se aplican al mismo
+        problema con los mismos datos y la misma semilla. La elección de la tecnología no condiciona la capacidad del
+        modelo para predecir el riesgo académico, siempre que se seleccione un algoritmo adecuado. En este caso, ambos
+        prototipos coincidieron en seleccionar la Regresión Logística como mejor clasificador, lo que refuerza la
+        equivalencia del experimento.
+
+        En cuanto a la velocidad de desarrollo, PyCaret supone una ventaja clara para prototipado rápido. Automatiza el
+        preprocesamiento, la comparación de modelos y la generación de resultados con pocas líneas de código, lo que lo
+        hace especialmente útil cuando el objetivo es explorar rápidamente qué modelo funciona mejor sobre un nuevo
+        dataset. El tiempo de desarrollo se redujo a la mitad respecto a Scikit-learn.
+
+        Sin embargo, Scikit-learn ofrece mayor control y transparencia. Al construir el pipeline de forma explícita, el
+        desarrollador comprende y controla cada paso del proceso, lo que facilita la depuración, el ajuste fino y la
+        adaptación a requisitos específicos. Además, Scikit-learn es compatible con versiones más recientes de Python y
+        genera entornos virtuales más ligeros, sin las restricciones de compatibilidad que presenta PyCaret.
+
+        En cuanto al rendimiento computacional, Scikit-learn es significativamente más rápido tanto en entrenamiento
+        como en predicción cuando se compara de forma aislada. No obstante, hay que tener en cuenta que el tiempo medido
+        en PyCaret incluye la comparación automática de múltiples modelos, lo que no es un tiempo de entrenamiento puro
+        sino un proceso de selección de modelo.
+
+        En conclusión, PyCaret es más adecuado para fases de exploración y prototipado rápido, mientras que Scikit-learn
+        resulta más apropiado para proyectos en producción donde se requiere control, eficiencia y compatibilidad con
+        entornos variados. La elección entre una y otra tecnología dependerá del contexto, el perfil del equipo y los
+        objetivos del proyecto.
+      </p>
+
+    </section>
+    <section id="8">
+      <h2>8. Aspectos complementarios</h2>
+      <h3>8.1. Compatibilidad con Google Colab</h3>
+      <p>
+        El prototipo A (Scikit-learn) incluye compatibilidad con Google Colab. El script detecta automáticamente si se
+        ejecuta en un entorno sin acceso a __file__ (como Colab) y utiliza el directorio de trabajo actual como base.
+        Esto permite ejecutar el prototipo directamente en la nube sin modificar el código, facilitando la
+        reproducibilidad del experimento en entornos distintos al local.
+      </p>
+      <h3>8.2. Comparación automática de 13 modelos en el prototipo A</h3>
+      <p>
+        Una característica destacada del prototipo A es que, al igual que PyCaret, compara automáticamente 13
+        clasificadores distintos mediante validación cruzada de 5 folds, ordenando los resultados por F1-score para
+        seleccionar el mejor modelo. Los modelos evaluados incluyen Logistic Regression, Random Forest, Gradient
+        Boosting, Extra Trees, AdaBoost, Ridge Classifier, LDA, SVM lineal, QDA, Decision Tree, KNN, Naive Bayes y un
+        clasificador ficticio (Dummy). Esta funcionalidad replica el comportamiento de PyCaret de forma transparente y
+        controlada, permitiendo una comparación más justa entre ambas tecnologías.
+      </p>
+
+
+      <h3>8.3 Informe de utilización de LLMs</h3>
+      <p>
+        Durante el desarrollo del TG3 se han utilizado herramientas de inteligencia artificial generativa como apoyo
+        para la planificación del trabajo, la redacción inicial de apartados del informe, la explicación de errores
+        técnicos, la generación de estructuras de código y la revisión de la coherencia entre requisitos, prototipos y
+        criterios de comparación.
+      </p>
+      <p>
+        El uso de LLMs no sustituyó la ejecución ni validación de los prototipos. Los resultados incluidos en el informe
+        proceden de la ejecución real de los scripts desarrollados por el grupo. El equipo revisó y adaptó las
+        propuestas generadas, comprobando que fueran coherentes con el enunciado, con los trabajos TG1 y TG2 y con los
+        resultados obtenidos.
+      </p>
+
+      <h3>8.4 Relación con casos de cursos pasados</h3>
+      <p>
+        Como referencia se han tenido en cuenta trabajos de cursos anteriores relacionados con la comparación de
+        tecnologías, especialmente casos como NLTK frente a spaCy, TensorFlow frente a PyTorch y OutSystems frente a
+        AppSheet. Estos ejemplos sirvieron para orientar la estructura comparativa del trabajo, la separación entre
+        prototipos y la importancia de comparar tecnologías bajo requisitos funcionales equivalentes.
+      </p>
+      <p>
+        A diferencia de esos casos, este TG3 se centra en la comparación práctica de dos bibliotecas de machine learning
+        aplicadas al dominio educativo. La referencia principal tomada de esos trabajos ha sido la necesidad de definir
+        requisitos comunes, ejecutar prototipos comparables y justificar la elección final mediante criterios medibles.
+      </p>
+
+    </section>
+    <section id="9">
+      <h2>9. Anexos</h2>
+      <h3>Anexo 1: Comparación completa de modelos — Prototipo A (Scikit-learn)</h3>
+      <p>
+        La siguiente tabla muestra los resultados de la comparación automática de los 13 modelos evaluados en el
+        prototipo
+        A mediante validación cruzada de 5 folds, ordenados por F1-score descendente:
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <th>Modelo</th>
+            <th>Accuracy</th>
+            <th>Recall</th>
+            <th>Precision</th>
+            <th>F1</th>
+            <th>Tiempo (s)</th>
+          </tr>
+          <tr>
+            <td>Logistic Regression</td>
+            <td>0.9067</td>
+            <td>0.9067</td>
+            <td>0.9080</td>
+            <td>0.9056</td>
+            <td>0.504</td>
+          </tr>
+          <tr>
+            <td>SVM - Linear Kernel</td>
+            <td>0.9053</td>
+            <td>0.9053</td>
+            <td>0.9073</td>
+            <td>0.9040</td>
+            <td>0.478</td>
+          </tr>
+          <tr>
+            <td>Random Forest Classifier</td>
+            <td>0.9008</td>
+            <td>0.9008</td>
+            <td>0.9033</td>
+            <td>0.8994</td>
+            <td>8.194</td>
+          </tr>
+          <tr>
+            <td>Extra Trees Classifier</td>
+            <td>0.9001</td>
+            <td>0.9001</td>
+            <td>0.9030</td>
+            <td>0.8985</td>
+            <td>6.196</td>
+          </tr>
+          <tr>
+            <td>Ada Boost Classifier</td>
+            <td>0.8988</td>
+            <td>0.8988</td>
+            <td>0.9002</td>
+            <td>0.8975</td>
+            <td>5.686</td>
+          </tr>
+          <tr>
+            <td>Gradient Boosting Classifier</td>
+            <td>0.8974</td>
+            <td>0.8974</td>
+            <td>0.8985</td>
+            <td>0.8962</td>
+            <td>14.983</td>
+          </tr>
+          <tr>
+            <td>Ridge Classifier</td>
+            <td>0.8964</td>
+            <td>0.8964</td>
+            <td>0.9000</td>
+            <td>0.8944</td>
+            <td>0.391</td>
+          </tr>
+          <tr>
+            <td>Linear Discriminant Analysis</td>
+            <td>0.8957</td>
+            <td>0.8957</td>
+            <td>0.8991</td>
+            <td>0.8938</td>
+            <td>0.569</td>
+          </tr>
+          <tr>
+            <td>Quadratic Discriminant Analysis</td>
+            <td>0.8616</td>
+            <td>0.8616</td>
+            <td>0.8610</td>
+            <td>0.8605</td>
+            <td>0.376</td>
+          </tr>
+          <tr>
+            <td>Naive Bayes</td>
+            <td>0.8430</td>
+            <td>0.8430</td>
+            <td>0.8428</td>
+            <td>0.8409</td>
+            <td>0.251</td>
+          </tr>
+          <tr>
+            <td>Decision Tree Classifier</td>
+            <td>0.8409</td>
+            <td>0.8409</td>
+            <td>0.8413</td>
+            <td>0.8410</td>
+            <td>0.653</td>
+          </tr>
+          <tr>
+            <td>K Neighbors Classifier</td>
+            <td>0.8450</td>
+            <td>0.8450</td>
+            <td>0.8525</td>
+            <td>0.8399</td>
+            <td>0.410</td>
+          </tr>
+          <tr>
+            <td>Dummy Classifier</td>
+            <td>0.6085</td>
+            <td>0.6085</td>
+            <td>0.3702</td>
+            <td>0.4604</td>
+            <td>0.210</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Anexo 2: Información del dataset</h3>
+      <p>
+        Ambos prototipos utilizan el mismo dataset educativo Predict Students' Dropout and Academic Success, con las
+        siguientes características tras el filtrado de registros:
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <th>Parámetro</th>
+            <th>Valor</th>
+          </tr>
+          <tr>
+            <td>Filas utilizadas</td>
+            <td>3630</td>
+          </tr>
+          <tr>
+            <td>Columnas (variables predictoras + objetivo)</td>
+            <td>37</td>
+          </tr>
+          <tr>
+            <td>Variable objetivo</td>
+            <td>Target_binary</td>
+          </tr>
+          <tr>
+            <td>Clase Exito (Graduate)</td>
+            <td>2.209 registros (60,9 %)</td>
+          </tr>
+          <tr>
+            <td>Clase Riesgo (Dropout)</td>
+            <td>1.421 registros (39,1 %)</td>
+          </tr>
+          <tr>
+            <td>Registros excluidos (Enrolled)</td>
+            <td>794 registros</td>
+          </tr>
+          <tr>
+            <td>Partición entrenamiento / prueba</td>
+            <td>80 % / 20 % (semilla 42)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Anexo 3: Trazabilidad de requisitos frente a los prototipos</h3>
+      <p>
+        La siguiente tabla muestra la correspondencia entre los requisitos definidos en el apartado 2 y su
+        cumplimiento en los dos prototipos implementados. El objetivo de este anexo es justificar que la comparación
+        realizada en el apartado 6 se basa en prototipos funcionalmente equivalentes.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Req.</th>
+            <th>Descripción</th>
+            <th>Prototipo A<br />Scikit-learn</th>
+            <th>Prototipo B<br />PyCaret</th>
+            <th>Evidencia</th>
+          </tr>
+          <tr>
+            <td>01</td>
+            <td>Cargar un dataset educativo en formato CSV</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>data/data.csv</code> en ambos prototipos</td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>Identificar una variable objetivo binaria de aprobado/riesgo</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td>Transformación de <code>Target</code> a <code>Target_binary</code></td>
+          </tr>
+          <tr>
+            <td>03</td>
+            <td>Separar variables predictoras y variable objetivo</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td>Scripts principales de ambos prototipos</td>
+          </tr>
+          <tr>
+            <td>04</td>
+            <td>Realizar preprocesamiento de variables numéricas y categóricas</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>Pipeline</code> de Scikit-learn / preprocesamiento automático de PyCaret</td>
+          </tr>
+          <tr>
+            <td>05</td>
+            <td>Dividir los datos en entrenamiento y prueba</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td>Partición 80 % / 20 % con semilla fija</td>
+          </tr>
+          <tr>
+            <td>06</td>
+            <td>Entrenar al menos un modelo de clasificación</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td>Modelo final seleccionado: Logistic Regression</td>
+          </tr>
+          <tr>
+            <td>07</td>
+            <td>Calcular accuracy, precision, recall y F1-score</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>metricas_sklearn.csv</code> / <code>metricas_pycaret.csv</code></td>
+          </tr>
+          <tr>
+            <td>08</td>
+            <td>Generar una matriz de confusión</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>matriz_confusion_sklearn.*</code> / <code>matriz_confusion_pycaret.*</code></td>
+          </tr>
+          <tr>
+            <td>09</td>
+            <td>Medir tiempo de entrenamiento</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>tiempos_sklearn.txt</code> / <code>tiempos_pycaret.txt</code></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Medir tiempo de predicción</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>tiempos_sklearn.txt</code> / <code>tiempos_pycaret.txt</code></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Guardar los resultados en carpeta results</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td>Carpeta <code>results/</code> en ambos prototipos</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Permitir reproducir el experimento con semilla fija</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>random_state=42</code> / <code>session_id=42</code></td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Incluir instrucciones de instalación y ejecución</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>README.md</code> de cada prototipo</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Registrar dependencias en requirements.txt</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td><code>requirements.txt</code> en ambos prototipos</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Permitir modificar fácilmente modelo o dataset</td>
+            <td>Sí</td>
+            <td>Sí</td>
+            <td>Estructura modular y uso de scripts principales reutilizables</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Como puede observarse, ambos prototipos cumplen los mismos requisitos funcionales definidos por el grupo. Esto
+        permite considerar que la comparación posterior entre Scikit-learn y PyCaret se ha realizado sobre una base
+        equivalente y, por tanto, resulta válida desde el punto de vista metodológico.
+      </p>
+
+      <h3>Anexo 4: Evidencias de evaluación y matrices de confusión</h3>
+      <p>
+        En este anexo se recogen las principales evidencias visuales generadas durante la evaluación de los prototipos.
+        En ambos casos se obtuvo la misma matriz de resultados globales, ya que los dos prototipos seleccionaron el
+        mismo modelo final y trabajaron con la misma partición de entrenamiento y prueba.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Elemento</th>
+            <th>Prototipo A: Scikit-learn</th>
+            <th>Prototipo B: PyCaret</th>
+          </tr>
+          <tr>
+            <td>Matriz de confusión (CSV)</td>
+            <td><code>results/matriz_confusion_sklearn.csv</code></td>
+            <td><code>results/matriz_confusion_pycaret.csv</code></td>
+          </tr>
+          <tr>
+            <td>Matriz de confusión (PNG)</td>
+            <td><code>results/matriz_confusion_sklearn.png</code></td>
+            <td><code>results/matriz_confusion_pycaret.png</code></td>
+          </tr>
+          <tr>
+            <td>Informe de clasificación</td>
+            <td><code>results/classification_report_sklearn.txt</code></td>
+            <td>No generado por separado</td>
+          </tr>
+          <tr>
+            <td>Métricas finales</td>
+            <td><code>results/metricas_sklearn.csv</code></td>
+            <td><code>results/metricas_pycaret.csv</code></td>
+          </tr>
+          <tr>
+            <td>Tiempos de ejecución</td>
+            <td><code>results/tiempos_sklearn.txt</code></td>
+            <td><code>results/tiempos_pycaret.txt</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Las matrices de confusión y los archivos de métricas generados permiten comprobar visualmente que ambos
+        prototipos clasifican de forma equivalente los casos de éxito académico y riesgo académico. Esta evidencia
+        complementa la tabla comparativa del apartado 6 y refuerza la reproducibilidad del experimento.
+      </p>
+
+      <h3>Anexo 5: Trazabilidad de criterios de comparación con evidencias</h3>
+      <p>
+        La siguiente tabla relaciona cada criterio de comparación definido en el apartado 3 con la evidencia concreta
+        utilizada para medirlo en ambos prototipos. De esta forma se justifica que los valores comparados en el
+        apartado 6 no son estimaciones arbitrarias, sino resultados derivados de archivos, scripts y observaciones
+        documentadas durante el desarrollo.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Código</th>
+            <th>Criterio</th>
+            <th>Evidencia en Prototipo A</th>
+            <th>Evidencia en Prototipo B</th>
+          </tr>
+          <tr>
+            <td>C01</td>
+            <td>Tiempo de entrenamiento del modelo</td>
+            <td><code>results/tiempos_sklearn.txt</code></td>
+            <td><code>results/tiempos_pycaret.txt</code></td>
+          </tr>
+          <tr>
+            <td>C02</td>
+            <td>Tiempo de predicción</td>
+            <td><code>results/tiempos_sklearn.txt</code></td>
+            <td><code>results/tiempos_pycaret.txt</code></td>
+          </tr>
+          <tr>
+            <td>C03</td>
+            <td>Exactitud del modelo</td>
+            <td><code>results/metricas_sklearn.csv</code></td>
+            <td><code>results/metricas_pycaret.csv</code></td>
+          </tr>
+          <tr>
+            <td>C04</td>
+            <td>F1-score</td>
+            <td><code>results/metricas_sklearn.csv</code></td>
+            <td><code>results/metricas_pycaret.csv</code></td>
+          </tr>
+          <tr>
+            <td>C05</td>
+            <td>Precision para la clase Riesgo</td>
+            <td><code>results/metricas_sklearn.csv</code></td>
+            <td><code>results/metricas_pycaret.csv</code></td>
+          </tr>
+          <tr>
+            <td>C06</td>
+            <td>Recall para la clase Riesgo</td>
+            <td><code>results/metricas_sklearn.csv</code></td>
+            <td><code>results/metricas_pycaret.csv</code></td>
+          </tr>
+          <tr>
+            <td>C07</td>
+            <td>Líneas efectivas de código necesarias</td>
+            <td><code>src/prototipo_sklearn.py</code></td>
+            <td><code>src/prototipo_pycaret.py</code></td>
+          </tr>
+          <tr>
+            <td>C08</td>
+            <td>Horas empleadas en el desarrollo</td>
+            <td>Estimación registrada por el equipo</td>
+            <td>Estimación registrada por el equipo</td>
+          </tr>
+          <tr>
+            <td>C09</td>
+            <td>Dificultad de instalación y configuración</td>
+            <td><code>README.md</code> + pruebas del equipo</td>
+            <td><code>README.md</code> + pruebas del equipo</td>
+          </tr>
+          <tr>
+            <td>C10</td>
+            <td>Cantidad de código de preprocesamiento requerido</td>
+            <td><code>src/prototipo_sklearn.py</code></td>
+            <td><code>src/prototipo_pycaret.py</code></td>
+          </tr>
+          <tr>
+            <td>C11</td>
+            <td>Facilidad de sustitución del modelo o dataset</td>
+            <td>Estructura del pipeline y script principal</td>
+            <td>Configuración del experimento en PyCaret</td>
+          </tr>
+          <tr>
+            <td>C12</td>
+            <td>Reproducibilidad del experimento</td>
+            <td><code>random_state=42</code></td>
+            <td><code>session_id=42</code></td>
+          </tr>
+          <tr>
+            <td>C13</td>
+            <td>Número de dependencias externas</td>
+            <td><code>requirements.txt</code></td>
+            <td><code>requirements.txt</code></td>
+          </tr>
+          <tr>
+            <td>C14</td>
+            <td>Legibilidad y mantenibilidad del código</td>
+            <td>Revisión del script principal y su estructura</td>
+            <td>Revisión del script principal y su estructura</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Este anexo permite enlazar de forma directa la definición de los criterios con las evidencias reales del
+        proyecto, reforzando la trazabilidad del trabajo y la coherencia entre requisitos, implementación, medición y
+        conclusiones.
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>

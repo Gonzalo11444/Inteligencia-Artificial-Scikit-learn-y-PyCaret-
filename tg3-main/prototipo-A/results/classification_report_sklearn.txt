@@ -1,0 +1,10 @@
+CLASSIFICATION REPORT - PROTOTIPO A SCIKIT-LEARN
+=================================================
+              precision    recall  f1-score   support
+
+       Exito       0.95      0.96      0.95       442
+      Riesgo       0.93      0.92      0.93       284
+
+    accuracy                           0.94       726
+   macro avg       0.94      0.94      0.94       726
+weighted avg       0.94      0.94      0.94       726
